@@ -1,0 +1,14 @@
+$color-main:yellow;
+
+@mixin phone {
+    @media (max-width: 600px) { @content; }
+  }
+  @mixin tablet {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin laptop {
+    @media (min-width: 992px) { @content; }
+  }
+  @mixin desktop-xl {
+    @media (min-width: 1200px) { @content; }
+  }

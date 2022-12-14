@@ -1,8 +1,18 @@
+@use "../styles/mixin.scss" as mixin;
+
 .container {
   padding: 0;
   margin:0;
 }
 
 .p {
-  color:red;
+  @include mixin.phone{
+    color:red;
+  }
+  @include mixin.tablet{
+    color:blue;
+  }
+  @include mixin.laptop{
+    color:mixin.$color-main
+  }
 }
