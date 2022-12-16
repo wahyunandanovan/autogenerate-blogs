@@ -6,15 +6,10 @@ interface ChildrenProps {
     children: any
 }
 
-
 const PageLayout = ({ children }: ChildrenProps) => (
-
     <div className={styles.container} >
         {children}
     </div>
-
-
-
 );
 
 export default PageLayout
