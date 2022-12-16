@@ -3,7 +3,7 @@ import styles from '../styles/layouts/pagelayout.module.scss'
 
 
 interface ChildrenProps {
-    children: any
+    children: React.ReactNode
 }
 
 const PageLayout = ({ children }: ChildrenProps) => (
