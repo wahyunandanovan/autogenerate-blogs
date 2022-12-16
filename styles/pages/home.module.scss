@@ -13,6 +13,6 @@
     color:blue;
   }
   @include mixin.laptop{
-    color:mixin.$color-main
+    color:mixin.$color-primary
   }
 }

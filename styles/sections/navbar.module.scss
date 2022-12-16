@@ -1,0 +1,52 @@
+@use "../../styles/mixin.scss" as mixin;
+
+.wrapp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+color: mixin.$color-primary;
+}
+
+.linkWrapp{
+    align-items: center;
+    gap: 32px;
+    @include mixin.phone{
+        display: none
+      }
+    @include mixin.tablet{
+        display: none
+      }
+    @include mixin.laptop{
+        display: flex
+      }
+}
+
+.iconmenu {
+    @include mixin.phone{
+        display: flex
+      }
+    @include mixin.tablet{
+        display: flex
+      }
+    @include mixin.laptop{
+        display: none
+      }
+}
+
+.link{
+    font-size: 16;
+    color:mixin.$color-black;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.activeLink{
+    font-size: 16;
+    color:mixin.$color-primary;
+    text-decoration: none;
+    font-weight: 400;
+}

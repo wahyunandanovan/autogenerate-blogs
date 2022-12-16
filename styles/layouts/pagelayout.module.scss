@@ -1,0 +1,13 @@
+@use "../mixin.scss" as mixin;
+
+.container {
+    @include mixin.phone{
+        padding :16px 32px 16px 32px;
+    }
+    @include mixin.tablet{
+        padding :16px 52px 16px 52px;
+    }
+    @include mixin.laptop{
+        padding :16px 80px 16px 80px;
+    }
+}

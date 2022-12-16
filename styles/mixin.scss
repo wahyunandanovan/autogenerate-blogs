@@ -1,4 +1,8 @@
-$color-main:yellow;
+$color-primary: #F20231;
+$color-secondary: #0D9ED3;
+$color-black: #12103D;
+$color-white: #FFFFFF;
+$color-grey: rgb(18 16 61 / 80%);
 
 @mixin phone {
     @media (max-width: 600px) { @content; }
