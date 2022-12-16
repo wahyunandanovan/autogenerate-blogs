@@ -1,4 +1,6 @@
 import React from 'react'
+import { firestore } from '../../utils/firebase';
+import { collection, query, limit, getDocs } from "@firebase/firestore";
 import Navbar from './Navbar';
 
 

@@ -4,7 +4,7 @@ import styles from '../styles/layouts/pagelayout.module.scss'
 
 
 interface ChildrenProps {
-    children: React.ReactNode
+    children: any
 }
 
 
