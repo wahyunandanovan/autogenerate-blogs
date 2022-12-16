@@ -7,9 +7,8 @@ interface ChildrenProps {
     children: React.ReactNode
 }
 
-interface PropsInterface extends ChildrenProps, NextSeoProps { }
 
-const PageLayout = ({ children, title, description, openGraph, twitter }: PropsInterface) => (
+const PageLayout = ({ children, title, description, openGraph, twitter }: ChildrenProps & NextSeoProps) => (
     <>
         <NextSeo
             title={title}
