@@ -1,0 +1,35 @@
+@use "../../mixin.scss" as mixin;
+
+.card {
+    box-shadow:0.5px 0px 2px 0px rgb(0 0 0 / 20%);
+    transition: 0.3s;
+    width:fit-content;
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  .line {
+    height: 100;
+    background-color: mixin.$color-primary;
+    width: 6;
+    right: 2;
+  }
+  
+  
+  .card_container {
+    padding: 24px 40px;
+    border-left: 2px solid mixin.$color-primary;
+    max-width: 430px;
+
+  }
+  .provide {
+    margin-top: -1px;
+}
+
+.wrapper_map {
+display: flex;
+align-items: center;
+gap: 16px;
+}
+.wrapper_map_title{
+    font-weight: 700;
+}

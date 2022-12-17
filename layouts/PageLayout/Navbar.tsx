@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { MdMenu } from "react-icons/md";
-import styles from '../../styles/sections/navbar.module.scss'
-import { navbarMenu, navbarMenuType } from '../../utils/data'
-
+import styles from '../../styles/layouts/navbar.module.scss'
+import { navbarMenu, NavbarMenuType } from '../../utils/data'
 
 
 function Navbar() {
@@ -17,7 +16,7 @@ function Navbar() {
                 <MdMenu color='red' size={24} />
             </div>
             <div className={styles.linkWrapp}>
-                {navbarMenu.map((item: navbarMenuType, idx: number) => {
+                {navbarMenu.map((item: NavbarMenuType, idx: number) => {
                     return (
                         <div key={idx}>
                             <Link href={item.path} className={styles.link}>{item.name}</Link>

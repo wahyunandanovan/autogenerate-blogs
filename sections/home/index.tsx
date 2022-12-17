@@ -1,7 +1,7 @@
 import React from 'react'
 import { firestore } from '../../utils/firebase';
 import { collection, query, limit, getDocs } from "@firebase/firestore";
-import Navbar from './Navbar';
+import Banner from './Banner';
 
 
 function HomeSection() {
@@ -25,9 +25,9 @@ function HomeSection() {
     // console.log(data)
 
     return (
-        <>
-            <Navbar />
-        </>
+        <React.Fragment>
+            <Banner />
+        </React.Fragment>
     )
 }
 

@@ -5,11 +5,11 @@ import HomeSection from "../sections/home";
 
 export default function Home() {
   return (
-    <>
+    <React.Fragment>
       <NextSeo title="My-Blog | Home" />
       <PageLayout>
         <HomeSection />
       </PageLayout>
-    </>
+    </React.Fragment>
   );
 }
