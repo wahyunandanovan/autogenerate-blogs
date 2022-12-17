@@ -11,16 +11,36 @@ body {
 }
 
 p{
-  font-size: 16px;
   color:mixin.$color-grey;
+@include mixin.phone{
+    font-size: 12px;
+    line-height: 0.9;
+  }
+@include mixin.tablet{
+  font-size: 14px;
+  line-height: 0.9;
+  }
+@include mixin.laptop{
+  font-size: 16px;
   line-height: 0.1;
+  }
 }
+
 h3{
-  font-size: 34px;
   color:mixin.$color-black;
-  line-height: 1;
   font-weight: 700;
+  line-height: 1;
+  @include mixin.phone{
+    font-size: 24px;
+  }
+@include mixin.tablet{
+  font-size: 30px;
+  }
+@include mixin.laptop{
+  font-size: 34px;
+  }
 }
+
 h4{
   font-size: 28px;
   color:mixin.$color-black;

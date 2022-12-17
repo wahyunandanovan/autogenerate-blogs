@@ -2,7 +2,7 @@
 
 .container {
     @include mixin.phone{
-        padding :16px 32px 16px 32px;
+        padding :0px 16px 0px 16px;
     }
     @include mixin.tablet{
         padding :16px 52px 16px 52px;
