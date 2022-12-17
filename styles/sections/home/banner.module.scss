@@ -1,13 +1,25 @@
 @use "../../mixin.scss" as mixin;
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  align-items: center;
+}
+
 
 .card {
     box-shadow:0.5px 0px 2px 0px rgb(0 0 0 / 20%);
     transition: 0.3s;
     width:fit-content;
     border-radius: 0px 5px 5px 0px;
+    position: absolute;
+    background-color: mixin.$color-white;
+    z-index: 99;
+    left: 0;
   }
 
-  .line {
+.line {
     height: 100;
     background-color: mixin.$color-primary;
     width: 6;
@@ -15,13 +27,13 @@
   }
   
   
-  .card_container {
+.card_container {
     padding: 24px 40px;
     border-left: 2px solid mixin.$color-primary;
     max-width: 500px;
 
   }
-  .provide {
+.provide {
     margin-top: -1px;
 }
 
@@ -30,6 +42,33 @@ display: flex;
 align-items: center;
 gap: 16px;
 }
+
 .wrapper_map_title{
     font-weight: 700;
+}
+
+.slider_wrapp{
+  @include mixin.phone{
+    width: 100%;
+  }
+@include mixin.tablet{
+  width: 70%;
+  }
+@include mixin.laptop{
+  width: 70%;
+  }
+}
+.button_category{
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: mixin.$color-primary;
+  padding: 0.5px 6px;
+  width: fit-content;
+  p {
+    color:mixin.$color-white;
+    line-height: 0;
+  }
 }
