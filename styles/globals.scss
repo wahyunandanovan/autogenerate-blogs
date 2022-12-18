@@ -1,6 +1,5 @@
 @use "../styles/mixin.scss" as mixin;
 
-
 html,
 body {
   padding: 0;
@@ -10,41 +9,39 @@ body {
   background-color: mixin.$color-white;
 }
 
-p{
-  color:mixin.$color-grey;
-@include mixin.phone{
+p {
+  color: mixin.$color-grey;
+  line-height: 1;
+
+  @include mixin.phone {
     font-size: 12px;
-    line-height: 0.9;
   }
-@include mixin.tablet{
-  font-size: 14px;
-  line-height: 0.9;
+  @include mixin.tablet {
+    font-size: 14px;
   }
-@include mixin.laptop{
-  font-size: 16px;
-  line-height: 0.1;
+  @include mixin.laptop {
+    font-size: 16px;
   }
 }
 
-h3{
-  color:mixin.$color-black;
+h3 {
+  color: mixin.$color-black;
   font-weight: 700;
   line-height: 1;
-  @include mixin.phone{
+  @include mixin.phone {
     font-size: 24px;
   }
-@include mixin.tablet{
-  font-size: 30px;
+  @include mixin.tablet {
+    font-size: 30px;
   }
-@include mixin.laptop{
-  font-size: 34px;
+  @include mixin.laptop {
+    font-size: 34px;
   }
 }
 
-h4{
+h4 {
   font-size: 28px;
-  color:mixin.$color-black;
+  color: mixin.$color-black;
   line-height: 0.8;
   font-weight: 700;
 }
-

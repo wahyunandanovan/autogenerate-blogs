@@ -1,4 +1,5 @@
 @use "../../mixin.scss" as mixin;
+
 .container {
   width: 100%;
   display: flex;
@@ -6,7 +7,6 @@
   position: relative;
   align-items: center;
 }
-
 
 .card {
     box-shadow:0.5px 0px 2px 0px rgb(0 0 0 / 20%);
@@ -17,6 +17,16 @@
     background-color: mixin.$color-white;
     z-index: 99;
     left: 0;
+    @include mixin.laptop{
+      display: flex !important;
+    }
+    @include mixin.tablet{
+      display: none;
+    }
+    @include mixin.phone{
+      display: none !important;
+    }
+    
   }
 
 .line {
@@ -26,12 +36,14 @@
     right: 2;
   }
   
-  
 .card_container {
     padding: 24px 40px;
     border-left: 2px solid mixin.$color-primary;
     max-width: 500px;
-
+    margin-bottom: 16px;
+    span {
+      color:mixin.$color-primary;
+    }
   }
 .provide {
     margin-top: -1px;
@@ -48,11 +60,11 @@ gap: 16px;
 }
 
 .slider_wrapp{
-  @include mixin.phone{
-    width: 100%;
+@include mixin.phone{
+    width: 100%;;
   }
 @include mixin.tablet{
-  width: 70%;
+  width: 100%;
   }
 @include mixin.laptop{
   width: 70%;
@@ -63,12 +75,30 @@ gap: 16px;
   z-index: 99;
   right: 0;
   border-radius: 5px;
-  margin: 10px;
+  margin: 24px;
   background-color: mixin.$color-primary;
   padding: 0.5px 6px;
   width: fit-content;
   p {
     color:mixin.$color-white;
     line-height: 0;
+  }
+}
+.title{
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  bottom: 0;
+  margin: 24px;
+  color: mixin.$color-white;
+  text-align: right;
+  @include mixin.phone{
+    max-width: 70%;
+  }
+@include mixin.tablet{
+  max-width: 60%;
+}
+@include mixin.laptop{
+  max-width: 40%;
   }
 }
