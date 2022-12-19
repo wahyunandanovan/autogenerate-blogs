@@ -29,17 +29,40 @@
   p {
     @include mixin.laptop {
       font-size: 20px;
+      max-width: 60%;
     }
     @include mixin.tablet {
       font-size: 16px;
     }
     @include mixin.phone {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }
 
 .right {
+  display: flex;
+  @include mixin.laptop {
+    flex: 45% !important;
+    flex-direction: row;
+    gap: 32px;
+  }
+  @include mixin.tablet {
+    flex: 100%;
+    flex-direction: row;
+    gap: 32px;
+  }
+  @include mixin.phone {
+    flex: 100%;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+  }
+}
+.grid1 {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
   @include mixin.laptop {
     flex: 45% !important;
   }
@@ -48,5 +71,33 @@
   }
   @include mixin.phone {
     flex: 100%;
+  }
+  gap: 16px;
+  .row {
+    display: flex;
+    align-items: center;
+    p {
+      color: mixin.$color-primary;
+      font-weight: 700;
+      margin-left: 12px;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+.grid2 {
+  flex: 50%;
+  .row {
+    display: flex;
+    align-items: center;
+    p {
+      color: mixin.$color-primary;
+      font-weight: 700;
+      margin-left: 12px;
+      padding-bottom: 4px;
+    }
+  }
+  p {
+    max-width: 90%;
   }
 }

@@ -1,4 +1,14 @@
+@use "../mixin.scss" as mixin;
+
 .div {
- margin: 16px 0px;
- padding-bottom: 30px;
+  margin: 16px 0px;
+  @include mixin.laptop {
+    padding-bottom: 120px !important ;
+  }
+  @include mixin.tablet {
+    padding-bottom: 72px;
+  }
+  @include mixin.phone {
+    padding-bottom: 30px;
+  }
 }

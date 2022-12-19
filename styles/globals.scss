@@ -4,8 +4,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   background-color: mixin.$color-white;
 }
 
@@ -40,8 +40,16 @@ h3 {
 }
 
 h4 {
-  font-size: 28px;
   color: mixin.$color-black;
   line-height: 0.8;
   font-weight: 700;
+  @include mixin.phone {
+    font-size: 22px;
+  }
+  @include mixin.tablet {
+    font-size: 24px;
+  }
+  @include mixin.laptop {
+    font-size: 28px;
+  }
 }
