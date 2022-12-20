@@ -21,3 +21,31 @@
     box-shadow: 3px 3px 10px 0px #bebebe38, -20px -20px 60px #ffffff;
   }
 }
+
+.content {
+  display: flex;
+  gap: 16px;
+  height: 525px;
+  @include mixin.laptop {
+    flex-direction: row !important;
+  }
+  @include mixin.tablet {
+    flex-direction: column;
+  }
+  @include mixin.phone {
+    flex-direction: column;
+  }
+}
+
+.left_column {
+  height: 525px;
+}
+.rigth_column {
+  display: flex;
+  flex-direction: column;
+  height: 525px;
+  gap: 16px;
+}
+.col {
+  height: 184px !important;
+}

@@ -1,20 +1,34 @@
 import React from "react";
 import styles from "../styles/components/cover.module.scss";
+import { getColor } from "../utils";
 import Chip from "./Chip";
 
-function Cover() {
+interface PropsInterface {
+  image: string
+}
+
+function Cover({ image }: PropsInterface) {
   return (
     <div
       style={{
-        backgroundImage: `url("https://picsum.photos/id/1015/1000/600/")`,
+        position: 'relative',
+        backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: 24,
-        alignItems: "center",
+        height: '-webkit-fill-available',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
     >
-      <div>
-        <Chip trending title="TRENDING" />
+      <div className={styles.absolute_div} />
+      <div className={styles.top}>
+        <div> <Chip trending title="TRENDING" /></div>
+        <div><Chip title="ECONOMIC" backgroundColor={getColor('ECONOMIC')} /></div>
+      </div>
+      <div className={styles.bottom}>
+        <h4 className={styles.h4}>Creative photography ideas from smart devices</h4>
       </div>
     </div>
   );
