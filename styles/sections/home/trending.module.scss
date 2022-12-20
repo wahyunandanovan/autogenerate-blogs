@@ -28,6 +28,7 @@
   height: 525px;
   @include mixin.laptop {
     flex-direction: row !important;
+    justify-content: space-between;
   }
   @include mixin.tablet {
     flex-direction: column;
@@ -38,9 +39,19 @@
 }
 
 .left_column {
-  height: 525px;
+  flex: 50%;
+  @include mixin.laptop {
+    height: 525px;
+  }
+  @include mixin.tablet {
+    height: 525px;
+  }
+  @include mixin.phone {
+    height: 262.5px;
+  }
 }
 .rigth_column {
+  flex: 50%;
   display: flex;
   flex-direction: column;
   height: 525px;

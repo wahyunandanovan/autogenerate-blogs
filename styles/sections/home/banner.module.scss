@@ -71,6 +71,7 @@
 .wrapper_map {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   @include mixin.phone {
     gap: 8px;
     p {
