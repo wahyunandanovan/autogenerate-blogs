@@ -51,13 +51,17 @@
   }
 }
 .rigth_column {
-  flex: 50%;
-  display: flex;
-  flex-direction: column;
-  height: 525px;
-  max-height: 525px;
-  gap: 16px;
+  @include mixin.laptop {
+    flex: 50%;
+  }
+  @include mixin.tablet {
+    flex: 50%;
+  }
+  @include mixin.phone {
+    flex: 100%;
+  }
 }
-.col {
-  height: 184px !important;
-}
+
+// .wrapper_map{
+
+// }

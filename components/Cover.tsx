@@ -4,16 +4,26 @@ import Chip from "./Chip";
 import Avatar from "./Avatar";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 //UTILITY
-import { getColor } from "../utils";
+import { palette } from "../utils/palette";
 //STYLES
 import styles from "../styles/components/cover.module.scss";
-import { palette } from "../utils/palette";
 
 interface PropsInterface {
   image: string;
+  chipcolor: string | any
+  category?: string | any
+  trending?: boolean
+  avatar?: string | any
+  title: string
+  authorname?: string
+  time?: string
+  like?: number
+  view?: number
+  onClickLike?: () => void
+  onClickView?: () => void
 }
 
-function Cover({ image }: PropsInterface) {
+function Cover({ image, chipcolor, trending, category, avatar, title, authorname, time, like, view, onClickLike, onClickView }: PropsInterface) {
   return (
     <div
       style={{
@@ -26,31 +36,31 @@ function Cover({ image }: PropsInterface) {
     >
       <div className={styles.absolute_div}>
         <div className={styles.top}>
-          <div>
+          {trending && (<div>
             <Chip trending title="TRENDING" />
-          </div>
+          </div>)}
           <div>
-            <Chip title="ECONOMIC" backgroundColor={getColor("ECONOMIC")} />
+            <Chip title={category} backgroundColor={chipcolor} />
           </div>
         </div>
         <div className={styles.bottom}>
-          <h4 className={styles.h4}>Creative photography ideas from smart devices</h4>
+          <h4 className={styles.h4}>{title}</h4>
           <div className={styles.footer}>
             <div className={styles.author_wrapp}>
-              <Avatar size={34} />
+              <Avatar src={avatar} size={34} />
               <div>
-                <p className={styles.author}>Wahyu Nanda</p>
-                <p className={styles.time}>2 minute ago</p>
+                <p className={styles.author}>{authorname}</p>
+                <p className={styles.time}>{time}</p>
               </div>
             </div>
             <div className={styles.like_wrapper}>
               <div>
-                <AiOutlineHeart size={20} color={palette.white} />
-                <p>200</p>
+                <AiOutlineHeart onClick={onClickLike} size={20} color={palette.white} style={{ cursor: 'pointer' }} />
+                <p>{like}</p>
               </div>
               <div>
-                <AiOutlineEye size={20} color={palette.white} />
-                <p>200</p>
+                <AiOutlineEye onClick={onClickView} size={20} color={palette.white} style={{ cursor: 'pointer' }} />
+                <p>{view}</p>
               </div>
             </div>
           </div>
