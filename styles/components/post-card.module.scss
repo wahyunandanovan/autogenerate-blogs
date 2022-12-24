@@ -1,0 +1,13 @@
+@use "../mixin.scss" as mixin;
+
+.container {
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
+}
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: mixin.$color-white;
+}

@@ -3,6 +3,7 @@
 .container {
   display: flex;
   gap: 24px;
+
   @include mixin.laptop {
     flex-direction: row !important;
     justify-content: space-between;
@@ -14,10 +15,39 @@
     flex-direction: column;
   }
 }
+.h4 {
+  margin-bottom: 24px;
+  .span {
+    color: mixin.$color-primary;
+  }
+}
+
 .popular {
   flex: 35%;
 }
 
 .latest {
   flex: 65%;
+  padding: 24px 0px;
+  box-sizing: border-box;
+}
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.flex_item {
+  @include mixin.laptop {
+    width: 50vh;
+    height: 50vh;
+  }
+  @include mixin.tablet {
+    width: 50vh;
+    height: 50vh;
+  }
+  @include mixin.phone {
+    width: 100vh;
+    height: 50vh;
+  }
 }

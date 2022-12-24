@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../styles/components/post.module.scss'
 import Chip from './Chip'
 
-function PostComponent() {
+function PopularPost() {
     return (
         <div className={styles.container} >
             <h4 className={styles.h4}>
@@ -26,4 +26,4 @@ function PostComponent() {
     )
 }
 
-export default PostComponent
+export default PopularPost
