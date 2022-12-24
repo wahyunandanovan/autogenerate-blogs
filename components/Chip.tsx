@@ -16,7 +16,7 @@ function Chip({ color, title, trending, backgroundColor }: PropsInterface) {
         <div
           style={{
             color: palette.white,
-            fontWeight: "600",
+            fontWeight: "500",
             width: "fit-content",
             fontSize: 14,
             padding: "3px 8px",
@@ -30,7 +30,7 @@ function Chip({ color, title, trending, backgroundColor }: PropsInterface) {
         <div
           style={{
             color: color ? color : palette.white,
-            fontWeight: "600",
+            fontWeight: "500",
             width: "fit-content",
             fontSize: 14,
             padding: "3px 8px",

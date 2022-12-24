@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import Introduction from "./Introduction";
 import Trending from "./Trending";
 import Recommendation from "./Recomendation";
+import Post from "./Post";
 //CONFIG
 import { firestore } from "../../utils/firebase";
 import { collection, query, limit, getDocs } from "@firebase/firestore";
@@ -33,6 +34,7 @@ function HomeSection() {
       <Introduction />
       <Trending />
       <Recommendation />
+      <Post />
     </React.Fragment>
   );
 }

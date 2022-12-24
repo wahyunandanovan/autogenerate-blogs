@@ -1,0 +1,45 @@
+@use "../mixin.scss" as mixin;
+
+.container {
+  background-color: rgb(238 244 246 / 33%);
+  padding: 24px;
+}
+
+.h4 {
+  margin-bottom: 24px;
+  .span {
+    color: mixin.$color-primary;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  h1 {
+    font-size: 55px;
+    color: rgb(18 16 61 / 10%);
+    font-weight: 600;
+  }
+  .detail {
+    margin-left: 16px;
+    .title {
+      font-weight: 700;
+      color: mixin.$color-black;
+      cursor: pointer;
+    }
+    .desc {
+      @include mixin.laptop {
+        font-size: 14px;
+        margin: 8px 0px;
+      }
+      @include mixin.tablet {
+        font-size: 14px;
+        margin: 8px 0px;
+      }
+      @include mixin.phone {
+        font-size: 12px;
+        margin: 6px 0px;
+      }
+    }
+  }
+}

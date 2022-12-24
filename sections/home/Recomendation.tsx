@@ -1,8 +1,10 @@
 import React from "react";
 import SectionContainer from "../../components/SectionContainer";
 import Cover from "../../components/Cover";
-import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
+//UTILITY
 import { getColor } from "../../utils";
+import { palette } from "../../utils/palette";
 //STYLE
 import styles from "../../styles/sections/home/recommendation.module.scss";
 import Chip from "../../components/Chip";
@@ -45,12 +47,22 @@ function Recommendation() {
                                 <div className={styles.img_wrapp} >
                                     <img src='https://picsum.photos/id/1019/1000/600/' alt='img' loading='lazy' />
                                     <div>
-                                        <Chip title="MUSIC" />
+                                        <Chip title="MUSIC" backgroundColor={getColor('MUSIC')} />
                                     </div>
                                 </div>
                                 <div className={styles.detail}>
                                     <h5>How to choose the right colors when creating a website?</h5>
                                     <p>Matthew ~ December 25, 2022</p>
+                                    <div className={styles.like_wrapper}>
+                                        <div>
+                                            <AiOutlineHeart size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
+                                            <p>100</p>
+                                        </div>
+                                        <div>
+                                            <AiOutlineEye size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
+                                            <p>100</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )

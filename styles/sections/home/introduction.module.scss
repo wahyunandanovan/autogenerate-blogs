@@ -49,6 +49,7 @@
 
 .right {
   display: flex;
+  padding: 8px;
   @include mixin.laptop {
     flex: 45% !important;
     flex-direction: row;
