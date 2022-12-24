@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
   span {
     color: mixin.$color-primary;
   }
@@ -53,6 +54,9 @@
 .rigth_column {
   @include mixin.laptop {
     flex: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   @include mixin.tablet {
     flex: 50%;
@@ -62,6 +66,37 @@
   }
 }
 
-// .wrapper_map{
-
-// }
+.wrapper_map {
+  width: fit-content;
+  display: flex;
+  .img_wrapp {
+    position: relative;
+    img {
+      @include mixin.laptop {
+        width: 25vh;
+        height: 35vh;
+      }
+      @include mixin.tablet {
+        width: 35vh;
+        height: 25vh;
+      }
+      @include mixin.phone {
+        width: 20vh;
+        height: 15vh;
+      }
+    }
+    div {
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      margin: 4px;
+    }
+  }
+}
+.detail {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 16px;
+}

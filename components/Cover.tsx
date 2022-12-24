@@ -44,7 +44,7 @@ function Cover({ image, chipcolor, trending, category, avatar, title, authorname
           </div>
         </div>
         <div className={styles.bottom}>
-          <h4 className={styles.h4}>{title}</h4>
+          <h5 className={styles.h5}>{title}</h5>
           <div className={styles.footer}>
             <div className={styles.author_wrapp}>
               <Avatar src={avatar} size={34} />

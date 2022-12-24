@@ -11,11 +11,11 @@ const v: BannerDataType[] = introductionData;
 export default function Introduction() {
   return (
     <SectionContainer>
+      <h4 className={styles.h4}>
+        Why Choose <span className={styles.span}>Our Web?</span>
+      </h4>
       <div className={styles.container}>
         <div className={styles.left}>
-          <h4>
-            Why Choose <span>Our Web?</span>
-          </h4>
           <p>
             Our website provides a variety of interesting information and is currently being discussed by the public.
           </p>
@@ -32,6 +32,7 @@ export default function Introduction() {
                 <div>{v[0].icon}</div>
                 <p>{v[0].title}</p>
               </div>
+              <br />
               <p>{v[0].description}</p>
             </Card>
             <Card width="100%">
@@ -39,6 +40,7 @@ export default function Introduction() {
                 <div>{v[1].icon}</div>
                 <p>{v[1].title}</p>
               </div>
+              <br />
               <p>{v[1].description}</p>
             </Card>
           </div>
@@ -48,6 +50,7 @@ export default function Introduction() {
                 <div>{v[2].icon}</div>
                 <p>{v[2].title}</p>
               </div>
+              <br />
               <p>{v[2].description}</p>
             </Card>
           </div>

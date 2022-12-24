@@ -48,13 +48,13 @@
 
 .card_container {
   @include mixin.laptop {
-    padding: 24px 40px;
+    padding: 40px;
   }
   @include mixin.tablet {
-    padding: 24px 40px;
+    padding: 40px;
   }
   @include mixin.phone {
-    padding: 12px 20px;
+    padding: 20px;
   }
 
   border-left: 2px solid mixin.$color-primary;
@@ -65,7 +65,9 @@
   }
 }
 .provide {
-  margin-top: -1px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  line-height: 1.5;
 }
 
 .wrapper_map {
@@ -88,6 +90,7 @@
 
 .wrapper_map_title {
   font-weight: 700;
+  margin: 8px 0px;
 }
 
 .slider_wrapp {
@@ -108,11 +111,10 @@
   right: 0;
   margin: 24px;
   background-color: mixin.$color-primary;
-  padding: 0.5px 6px;
+  padding: 4px 6px;
   width: fit-content;
   p {
     color: mixin.$color-white;
-    line-height: 0;
   }
 }
 .title {
@@ -130,6 +132,6 @@
     max-width: 60%;
   }
   @include mixin.laptop {
-    max-width: 40%;
+    max-width: 50%;
   }
 }

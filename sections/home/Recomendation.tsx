@@ -5,7 +5,7 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { getColor } from "../../utils";
 //STYLE
 import styles from "../../styles/sections/home/recommendation.module.scss";
-import Image from "next/image";
+import Chip from "../../components/Chip";
 
 function Recommendation() {
 
@@ -14,7 +14,7 @@ function Recommendation() {
             <div className={styles.row}>
                 <div>
                     <h4>
-                        <span>Trending</span> Topics
+                        <span>Recomend</span> For You
                     </h4>
                 </div>
                 <div className={styles.btn_wrapp}>
@@ -42,8 +42,15 @@ function Recommendation() {
                     {[1, 2, 3].map((item: number, idx: number) => {
                         return (
                             <div key={idx} className={styles.wrapper_map}>
-                                <div>
-                                    {/* <Image src='https://picsum.photos/id/1019/1000/600/' alt='img' width={300} height={300} /> */}
+                                <div className={styles.img_wrapp} >
+                                    <img src='https://picsum.photos/id/1019/1000/600/' alt='img' loading='lazy' />
+                                    <div>
+                                        <Chip title="MUSIC" />
+                                    </div>
+                                </div>
+                                <div className={styles.detail}>
+                                    <h5>How to choose the right colors when creating a website?</h5>
+                                    <p>Matthew ~ December 25, 2022</p>
                                 </div>
                             </div>
                         )

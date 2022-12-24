@@ -1,7 +1,15 @@
 @use "../../mixin.scss" as mixin;
 
+.h4 {
+  margin-bottom: 24px;
+  .span {
+    color: mixin.$color-primary;
+  }
+}
+
 .container {
   display: flex;
+  gap: 24px;
   @include mixin.laptop {
     flex-direction: row !important;
   }
@@ -23,13 +31,12 @@
   @include mixin.phone {
     flex: 100%;
   }
-  span {
-    color: mixin.$color-primary;
-  }
+
   p {
+    margin-bottom: 18px;
     @include mixin.laptop {
       font-size: 20px;
-      max-width: 60%;
+      max-width: 70%;
     }
     @include mixin.tablet {
       font-size: 16px;

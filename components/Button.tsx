@@ -15,6 +15,7 @@ function Button({ title, color, backgroundColor }: PropsInterface) {
         color: color ? color : palette.white,
         backgroundColor: backgroundColor ? backgroundColor : palette.primary,
         borderWidth: 0,
+        cursor: 'pointer'
       }}
     >
       {title}
