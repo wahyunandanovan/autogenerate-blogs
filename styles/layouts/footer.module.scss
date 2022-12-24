@@ -1,0 +1,92 @@
+@use "../../styles/mixin.scss" as mixin;
+
+.container {
+  color: mixin.$color-white;
+  background-color: mixin.$color-secondary;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start !important;
+  @include mixin.phone {
+    padding: 40px 16px;
+  }
+  @include mixin.tablet {
+    padding: 52px;
+  }
+  @include mixin.laptop {
+    padding: 80px;
+  }
+}
+
+.logo {
+  font-size: 35px;
+  margin: 0;
+}
+
+.flex1 {
+  flex: 35%;
+  p {
+    color: mixin.$color-white;
+    max-width: 260px;
+  }
+}
+.flex2 {
+  flex: 20%;
+}
+.flex3 {
+  flex: 20%;
+}
+.flex4 {
+  flex: 25%;
+}
+
+.title {
+  color: mixin.$color-white;
+  font-weight: 600;
+  margin-bottom: 16px;
+  @include mixin.phone {
+    font-size: 14px;
+  }
+  @include mixin.tablet {
+    font-size: 18px;
+  }
+  @include mixin.laptop {
+    font-size: 22px;
+  }
+}
+.subtitle {
+  color: mixin.$color-white;
+  margin-bottom: 12px;
+  font-weight: 400;
+  @include mixin.phone {
+    font-size: 12px;
+  }
+  @include mixin.tablet {
+    font-size: 16px;
+  }
+  @include mixin.laptop {
+    font-size: 16px;
+  }
+}
+
+.icon_wrapp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+
+  img {
+    @include mixin.phone {
+      width: 20px;
+      height: 20px;
+    }
+    @include mixin.tablet {
+      width: 40px;
+      height: 40px;
+    }
+    @include mixin.laptop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

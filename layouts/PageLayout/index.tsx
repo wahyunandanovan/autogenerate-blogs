@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles/layouts/pagelayout.module.scss'
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 interface ChildrenProps {
@@ -9,9 +10,12 @@ interface ChildrenProps {
 
 const PageLayout = ({ children }: ChildrenProps) => (
     <React.Fragment>
-        <div className={styles.container} >
+        <div className={styles.body}>
             <Navbar />
-            {children}
+            <div className={styles.container} >
+                {children}
+            </div>
+            <Footer />
         </div>
     </React.Fragment>
 );

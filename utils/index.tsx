@@ -1,4 +1,4 @@
-export const getColor = (c: string) => {
+export const getColor = (c: string | any) => {
     const name = c.toLowerCase()
     if (name === 'economic') {
         return '#09922F'

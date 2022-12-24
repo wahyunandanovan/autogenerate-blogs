@@ -5,7 +5,7 @@ import { HiOutlineFire } from "react-icons/hi";
 interface PropsInterface {
   trending?: boolean;
   color?: string;
-  title: string;
+  title: string | undefined
   backgroundColor?: string;
 }
 

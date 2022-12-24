@@ -8,6 +8,10 @@ export interface NavbarMenuType {
   name: string;
   path: string;
 }
+export interface FooterType {
+  name: string;
+  url: string;
+}
 export interface BannerDataType {
   title: string;
   description: string;
@@ -69,3 +73,22 @@ export const introductionData: BannerDataType[] = [
     icon: <TfiMedall color={palette.primary} size={24} />,
   },
 ];
+
+export const footerData: FooterType[] = [
+  {
+    name: 'LinkedIn.png',
+    url: 'facebook.com'
+  },
+  {
+    name: 'Twitter.png',
+    url: 'facebook.com'
+  },
+  {
+    name: 'Instagram.png',
+    url: 'facebook.com'
+  },
+  {
+    name: 'Facebook.png',
+    url: 'facebook.com'
+  },
+]
