@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineClose } from "react-icons/ai";
-import { UIContext } from '../hooks/contexts/UIcontext'
+import { UIContext } from '../hooks/contexts/UIContext';
 import styles from '../styles/components/sidebar.module.scss'
 
 function Sidebar() {
