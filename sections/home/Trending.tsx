@@ -46,7 +46,7 @@ function Trending() {
             avatar={'./images/wahyu.jpg'}
             chipcolor={getColor('ENTERTAINMENT')}
             title='Creative photography ideas from smart devices'
-            authorname="Nahyu Nanda"
+            authorname="Wahyu Nanda"
             time="2 days ago" like={200} view={200} />
           <Cover
             trending
