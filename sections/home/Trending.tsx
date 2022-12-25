@@ -32,7 +32,7 @@ function Trending() {
             trending
             image="https://picsum.photos/id/1015/1000/600/"
             category='ECONOMIC'
-            avatar={'./images/wahyu.jpg'}
+            avatar='/images/wahyu.jpg'
             chipcolor={getColor('ECONOMIC')}
             title='Creative photography ideas from smart devices'
             authorname="Nahyu Nanda"
@@ -43,7 +43,7 @@ function Trending() {
             trending
             image="https://picsum.photos/id/1018/1000/600/"
             category='ENTERTAINMENT'
-            avatar={'./images/wahyu.jpg'}
+            avatar='/images/wahyu.jpg'
             chipcolor={getColor('ENTERTAINMENT')}
             title='Creative photography ideas from smart devices'
             authorname="Wahyu Nanda"
@@ -52,7 +52,7 @@ function Trending() {
             trending
             image="https://picsum.photos/id/1019/1000/600/"
             category='SPORT'
-            avatar={'./images/wahyu.jpg'}
+            avatar='/images/wahyu.jpg'
             chipcolor={getColor('SPORT')}
             title='Creative photography ideas from smart devices'
             authorname="Nahyu Nanda"
@@ -60,7 +60,6 @@ function Trending() {
         </div>
       </div>
     </SectionContainer>
-    // ./images/wahyu.jpg
   );
 }
 

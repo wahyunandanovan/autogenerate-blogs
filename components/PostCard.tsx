@@ -3,6 +3,7 @@ import React from 'react'
 import styles from '../styles/components/post-card.module.scss'
 import Chip from './Chip'
 import { getColor } from '../utils'
+import { blurDataURL } from '../utils/data'
 
 interface PropsInterface {
     img: string
@@ -19,6 +20,8 @@ function PostCard({ img, title, time, description, category }: PropsInterface) {
                 <Image
                     src={img}
                     alt={`image-alt${img}`}
+                    placeholder='blur'
+                    blurDataURL={blurDataURL}
                     fill
                 />
             </div>

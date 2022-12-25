@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface PropsInterface {
@@ -9,13 +10,13 @@ interface PropsInterface {
 function Avatar({ size, style, src }: PropsInterface) {
   return (
     <div style={style}>
-      <img
+      <Image
         src={src}
         alt="Avatar"
+        width={size}
+        height={size}
         style={{
           verticalAlign: "middle",
-          width: size,
-          height: size,
           borderRadius: "50%",
         }}
       />

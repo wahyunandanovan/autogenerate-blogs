@@ -1,15 +1,38 @@
 import React from "react";
 import SectionContainer from "../../components/SectionContainer";
 import Cover from "../../components/Cover";
+import Image from "next/image";
+import Chip from "../../components/Chip";
 import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 //UTILITY
+import useFetch from "../../hooks/useFetch";
 import { getColor } from "../../utils";
 import { palette } from "../../utils/palette";
+import { blurDataURL } from "../../utils/data";
 //STYLE
 import styles from "../../styles/sections/home/recommendation.module.scss";
-import Chip from "../../components/Chip";
+
+const loadingData = [
+    {
+        title: 'Loading..',
+        body: 'Loading..',
+        category: 'Loading..',
+        images: ['1', '2']
+    },
+    {
+        title: 'Loading..',
+        body: 'Loading..',
+        category: 'Loading..',
+        images: ['1', '2']
+    },
+]
 
 function Recommendation() {
+    const query = useFetch({ limitItem: 4 })
+
+    const articles = query || loadingData
+
+    const mapArticles = query.slice(1, 4)
 
     return (
         <SectionContainer>
@@ -32,26 +55,27 @@ function Recommendation() {
             <div className={styles.content}>
                 <div className={styles.left_column}>
                     <Cover
-                        image="https://picsum.photos/id/1019/1000/600/"
+                        image={articles[0]?.images[0]}
                         category='ECONOMIC'
-                        avatar={'./images/wahyu.jpg'}
+                        avatar={'/images/wahyu.jpg'}
                         chipcolor={getColor('ECONOMIC')}
-                        title='Creative photography ideas from smart devices'
-                        authorname="Nahyu Nanda"
+                        title={articles[0]?.title}
+                        authorname="Wahyu Nanda"
                         time="2 days ago" like={200} view={200} />
                 </div>
                 <div className={styles.rigth_column}>
-                    {[1, 2, 3].map((item: number, idx: number) => {
+                    {mapArticles?.map((item: any, idx: number) => {
+                        const img = item?.images[0]
                         return (
                             <div key={idx} className={styles.wrapper_map}>
                                 <div className={styles.img_wrapp} >
-                                    <img src='https://picsum.photos/id/1019/1000/600/' alt='img' loading='lazy' />
+                                    <Image src={img} alt={`img-alt${img}`} width={100} height={100} placeholder='blur' blurDataURL={blurDataURL} />
                                     <div>
                                         <Chip title="MUSIC" backgroundColor={getColor('MUSIC')} />
                                     </div>
                                 </div>
                                 <div className={styles.detail}>
-                                    <h5>How to choose the right colors when creating a website?</h5>
+                                    <h5>{item.title}</h5>
                                     <p>Matthew ~ December 25, 2022</p>
                                     <div className={styles.like_wrapper}>
                                         <div>
@@ -70,7 +94,6 @@ function Recommendation() {
                 </div>
             </div>
         </SectionContainer>
-        // ./images/wahyu.jpg
     );
 }
 

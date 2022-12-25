@@ -2,7 +2,9 @@ import React from "react";
 //COMPONENTS
 import Chip from "./Chip";
 import Avatar from "./Avatar";
+import Image from "next/image";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
+import { blurDataURL } from "../utils/data";
 //UTILITY
 import { palette } from "../utils/palette";
 //STYLES
@@ -28,12 +30,18 @@ function Cover({ image, chipcolor, trending, category, avatar, title, authorname
     <div
       style={{
         position: "relative",
-        backgroundImage: `url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "inherit",
       }}
     >
+      <Image
+        src={image}
+        alt={`image-alt${image}`}
+        placeholder='blur'
+        blurDataURL={blurDataURL}
+        fill
+      />
       <div className={styles.absolute_div}>
         <div className={styles.top}>
           {trending && (<div>
