@@ -3,7 +3,7 @@ import styles from '../../styles/layouts/pagelayout.module.scss'
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from '../../components/Sidebar';
-import { UIContext } from '../../hooks/contexts/UIcontext';
+import { UIContext } from '../../hooks/contexts/UIContext';
 
 
 interface ChildrenProps {

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { MdMenu } from "react-icons/md";
-import { UIContext } from '../../hooks/contexts/UIcontext';
+import { UIContext } from '../../hooks/contexts/UIContext';
 import styles from '../../styles/layouts/navbar.module.scss'
 import { navbarMenu, NavbarMenuType } from '../../utils/data'
 
