@@ -12,7 +12,7 @@ import { firestore } from "../../utils/firebase";
 import styles from "../../styles/sections/home/trending.module.scss";
 
 function Trending() {
-  const q = query(collection(firestore, "articles"), limit(3), orderBy("created_at","DESC"));
+  const q = query(collection(firestore, "articles"), limit(3), orderBy("created_at", "DESC"));
 
   const { data: trendingData, isLoading } = useFetch(q)
 
