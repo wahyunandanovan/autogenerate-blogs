@@ -6,33 +6,24 @@ import Chip from "../../components/Chip";
 import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 //UTILITY
 import useFetch from "../../hooks/useFetch";
+import { collection, limit, query } from "firebase/firestore";
 import { getColor } from "../../utils";
 import { palette } from "../../utils/palette";
 import { blurDataURL } from "../../utils/data";
 //STYLE
 import styles from "../../styles/sections/home/recommendation.module.scss";
+import { firestore } from "../../utils/firebase";
 
-const loadingData = [
-    {
-        title: 'Loading..',
-        body: 'Loading..',
-        category: 'Loading..',
-        images: ['1', '2']
-    },
-    {
-        title: 'Loading..',
-        body: 'Loading..',
-        category: 'Loading..',
-        images: ['1', '2']
-    },
-]
+
 
 function Recommendation() {
-    const query = useFetch({ limitItem: 4 })
 
-    const articles = query || loadingData
+    const q = query(collection(firestore, "articles"), limit(4));
 
-    const mapArticles = query.slice(1, 4)
+    const dataFetch = useFetch(q)
+
+    const mapArticles = dataFetch.slice(1, 4)
+
 
     return (
         <SectionContainer>
@@ -55,11 +46,11 @@ function Recommendation() {
             <div className={styles.content}>
                 <div className={styles.left_column}>
                     <Cover
-                        image={articles[0]?.images[0]}
+                        image={dataFetch[0]?.images[0]}
                         category='ECONOMIC'
                         avatar={'/images/wahyu.jpg'}
                         chipcolor={getColor('ECONOMIC')}
-                        title={articles[0]?.title}
+                        title={dataFetch[0]?.title}
                         authorname="Wahyu Nanda"
                         time="2 days ago" like={200} view={200} />
                 </div>
@@ -69,7 +60,7 @@ function Recommendation() {
                         return (
                             <div key={idx} className={styles.wrapper_map}>
                                 <div className={styles.img_wrapp} >
-                                    <Image src={img} alt={`img-alt${img}`} width={100} height={100} placeholder='blur' blurDataURL={blurDataURL} />
+                                    <Image src={img} alt={`img-alt${img}`} fill placeholder='blur' blurDataURL={blurDataURL} />
                                     <div>
                                         <Chip title="MUSIC" backgroundColor={getColor('MUSIC')} />
                                     </div>

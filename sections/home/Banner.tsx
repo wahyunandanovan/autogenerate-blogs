@@ -24,7 +24,23 @@ const images = [
   },
 ];
 
+const imagesOnload = [
+  {
+    original: "/images/blurry.svg",
+    thumbnail: "https://picsum.photos/id/1018/250/150/",
+  },
+  {
+    original: "/images/blurry.svg",
+    thumbnail: "https://picsum.photos/id/1015/250/150/",
+  },
+  {
+    original: "/images/blurry.svg",
+    thumbnail: "https://picsum.photos/id/1019/250/150/",
+  },
+];
+
 export default function Banner() {
+
   return (
     <SectionContainer>
       <div className={styles.container}>
