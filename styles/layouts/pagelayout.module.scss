@@ -1,9 +1,11 @@
 @use "../mixin.scss" as mixin;
 
 .body {
+  box-sizing: border-box;
 }
 
 .container {
+  margin-top: 60px;
   @include mixin.phone {
     padding: 0px 16px 0px 16px;
   }

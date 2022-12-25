@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo';
 import PageLayout from "../layouts/PageLayout";
 import HomeSection from "../sections/home";
 
+
 export default function Home() {
   return (
     <React.Fragment>

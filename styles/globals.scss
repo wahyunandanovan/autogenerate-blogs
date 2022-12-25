@@ -5,6 +5,10 @@
   src: local("Rubik"), url("/fonts/Rubik-Regular.ttf") format("truetype");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;

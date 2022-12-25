@@ -1,11 +1,15 @@
 @use "../../styles/mixin.scss" as mixin;
 
-.container {
-  // position: fixed;
-  // z-index: 990;
-  // background-color: mixin.$color-white;
-  // width: 100%;
-  // top: 0;
+.wrapp {
+  width: 100%;
+  position: fixed;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  background-color: mixin.$color-white;
+  justify-content: space-between;
+  top: 0;
+  box-sizing: border-box;
   @include mixin.phone {
     padding: 0px 16px;
   }
@@ -15,14 +19,6 @@
   @include mixin.laptop {
     padding: 0px 80px;
   }
-}
-
-.wrapp {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: mixin.$color-white;
 }
 
 .logo {
