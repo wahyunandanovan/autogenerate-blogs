@@ -1,4 +1,4 @@
-@use "../../mixin.scss" as mixin;
+@use '../../mixin.scss' as mixin;
 
 .row {
   display: flex;
@@ -26,7 +26,6 @@
 .content {
   display: flex;
   gap: 16px;
-  min-height: 525px;
   @include mixin.laptop {
     flex-direction: row !important;
     justify-content: space-between;
@@ -42,13 +41,13 @@
 .left_column {
   flex: 50%;
   @include mixin.laptop {
-    height: 525px;
+    height: 100vh !important;
   }
   @include mixin.tablet {
-    height: 525px;
+    height: 50vh;
   }
   @include mixin.phone {
-    height: 262.5px;
+    height: 50vh;
   }
 }
 .rigth_column {
@@ -94,6 +93,7 @@
     }
   }
 }
+
 .detail {
   display: flex;
   flex-direction: column;
