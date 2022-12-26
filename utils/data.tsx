@@ -4,6 +4,8 @@ import { TfiMedall } from "react-icons/tfi";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 import { palette } from "../utils/palette";
 
+export const siteName = 'java automation'
+
 export interface NavbarMenuType {
   name: string;
   path: string;

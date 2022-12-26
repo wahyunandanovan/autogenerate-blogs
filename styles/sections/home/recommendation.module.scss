@@ -1,4 +1,4 @@
-@use '../../mixin.scss' as mixin;
+@use "../../mixin.scss" as mixin;
 
 .row {
   display: flex;
@@ -29,6 +29,7 @@
   @include mixin.laptop {
     flex-direction: row !important;
     justify-content: space-between;
+    height: 525px;
   }
   @include mixin.tablet {
     flex-direction: column;
@@ -40,17 +41,19 @@
 
 .left_column {
   flex: 50%;
+
   @include mixin.laptop {
-    height: 100vh !important;
+    height: -webkit-fill-available !important;
   }
   @include mixin.tablet {
-    height: 50vh;
+    height: 525px;
   }
   @include mixin.phone {
-    height: 50vh;
+    height: 272px;
   }
 }
 .rigth_column {
+  gap: 16px;
   @include mixin.laptop {
     flex: 50%;
     display: flex;
@@ -70,19 +73,20 @@
   display: flex;
   .img_wrapp {
     position: relative;
-
     @include mixin.laptop {
-      width: 25vh;
+      min-width: 25vh;
       height: 35vh;
+      margin-bottom: 0px !important;
     }
     @include mixin.tablet {
-      width: 35vh;
+      min-width: 35vh;
       height: 25vh;
+      margin-bottom: 16px;
     }
     @include mixin.phone {
-      width: 20vh;
+      min-width: 20vh;
       height: 15vh;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     div {
@@ -97,9 +101,10 @@
 .detail {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-left: 16px;
-  padding: 8px 0px;
+  gap: 12px;
+
   h5 {
     cursor: pointer;
   }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { siteName } from "../utils/data";
 
 interface PropsInterface {
   size: number;
@@ -12,7 +13,7 @@ function Avatar({ size, style, src }: PropsInterface) {
     <div style={style}>
       <Image
         src={src}
-        alt="Avatar"
+        alt={`Author ${siteName}`}
         width={size}
         height={size}
         style={{

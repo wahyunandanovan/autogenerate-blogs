@@ -4,7 +4,7 @@ import Chip from "./Chip";
 import Avatar from "./Avatar";
 import Image from "next/image";
 import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
-import { blurDataURL } from "../utils/data";
+import { blurDataURL, siteName } from "../utils/data";
 //UTILITY
 import { palette } from "../utils/palette";
 //STYLES
@@ -35,13 +35,13 @@ function Cover({ image, chipcolor, trending, category, avatar, title, authorname
         height: "inherit",
       }}
     >
-      <Image
+      {image && (<Image
         src={image}
-        alt={`image-alt${image}`}
+        alt={`${title} - ${siteName}`}
         placeholder='blur'
         blurDataURL={blurDataURL}
         fill
-      />
+      />)}
       <div className={styles.absolute_div}>
         <div className={styles.top}>
           {trending && (<div>
@@ -62,10 +62,10 @@ function Cover({ image, chipcolor, trending, category, avatar, title, authorname
               </div>
             </div>
             <div className={styles.like_wrapper}>
-              <div>
+              {/* <div>
                 <AiOutlineHeart onClick={onClickLike} size={20} color={palette.white} style={{ cursor: 'pointer' }} />
                 <p>{like}</p>
-              </div>
+              </div> */}
               <div>
                 <AiOutlineEye onClick={onClickView} size={20} color={palette.white} style={{ cursor: 'pointer' }} />
                 <p>{view}</p>

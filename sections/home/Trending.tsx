@@ -43,9 +43,9 @@ function Trending() {
           <Cover
             trending
             image={arr1?.images[0]}
-            category="ECONOMIC"
+            category={arr1?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
-            chipcolor={getColor('ECONOMIC')}
+            chipcolor={getColor(arr1?.category.id)}
             title={arr1?.title}
             authorname="Nahyu Nanda"
             time={time(arr1)}
@@ -57,9 +57,9 @@ function Trending() {
           <Cover
             trending
             image={arr2?.images[0]}
-            category="ENTERTAINMENT"
+            category={arr2?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
-            chipcolor={getColor('ENTERTAINMENT')}
+            chipcolor={getColor(arr2?.category.id)}
             title={arr2?.title}
             authorname="Wahyu Nanda"
             time={time(arr2)}
@@ -69,9 +69,9 @@ function Trending() {
           <Cover
             trending
             image={arr3?.images[0]}
-            category="SPORT"
+            category={arr3?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
-            chipcolor={getColor('SPORT')}
+            chipcolor={getColor(arr3?.category.id)}
             title={arr3?.title}
             authorname="Nahyu Nanda"
             time={time(arr3)}

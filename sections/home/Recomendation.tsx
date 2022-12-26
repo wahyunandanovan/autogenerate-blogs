@@ -10,7 +10,7 @@ import moment from 'moment';
 import { collection, limit, query } from 'firebase/firestore';
 import { getColor } from '../../utils';
 import { palette } from '../../utils/palette';
-import { blurDataURL } from '../../utils/data';
+import { blurDataURL, siteName } from '../../utils/data';
 import { firestore } from '../../utils/firebase';
 //STYLE
 import styles from '../../styles/sections/home/recommendation.module.scss';
@@ -51,8 +51,8 @@ function Recommendation() {
             title={firstArr?.title}
             authorname="Wahyu Nanda"
             time={moment(String(firstArr?.created_at)).fromNow()}
-            like={firstArr?.like + 20}
-            view={firstArr?.like + 25}
+            // like={firstArr?.like + 20}
+            view={Number(25)}
           />
         </div>
         <div className={styles.rigth_column}>
@@ -62,7 +62,7 @@ function Recommendation() {
             return (
               <div key={idx} className={styles.wrapper_map}>
                 <div className={styles.img_wrapp}>
-                  <Image src={img} alt={`img-alt${img}`} fill placeholder="blur" blurDataURL={blurDataURL} />
+                  <Image src={img} alt={`${item.title} - ${siteName}`} fill placeholder="blur" blurDataURL={blurDataURL} />
                   <div>
                     <Chip title={item.category.name.toUpperCase()} backgroundColor={getColor(item.category.id)} />
                   </div>
@@ -71,10 +71,10 @@ function Recommendation() {
                   <h5>{item.title}</h5>
                   <p>Gafar R ~ {time}</p>
                   <div className={styles.like_wrapper}>
-                    <div>
+                    {/* <div>
                       <AiOutlineHeart size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
                       <p>{item.like + 20}</p>
-                    </div>
+                    </div> */}
                     <div>
                       <AiOutlineEye size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
                       <p>{item.view + 25}</p>
