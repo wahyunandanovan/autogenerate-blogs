@@ -11,18 +11,20 @@
   top: 0;
   box-sizing: border-box;
   @include mixin.phone {
-    padding: 0px 16px;
+    padding: 12px 16px;
   }
   @include mixin.tablet {
     padding: 0px 80px;
   }
   @include mixin.laptop {
-    padding: 0px 80px;
+    padding: 16px 80px;
   }
 }
 
 .logo {
-  color: mixin.$color-primary;
+  h2 {
+    color: mixin.$color-primary;
+  }
 }
 
 .linkWrapp {

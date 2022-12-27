@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../styles/layouts/footer.module.scss'
-import { footerData, FooterType } from '../../utils/data'
+import { footerData, FooterType, siteName } from '../../utils/data'
 
 function Footer() {
     return (
@@ -28,7 +28,7 @@ function Footer() {
                 <div className={styles.icon_wrapp}>
                     {footerData.map((item: FooterType, index: number) => {
                         return (
-                            <img key={index} src={`./icons/${item.name}`} alt={`image-${item.name}`} />
+                            <img key={index} src={`./icons/${item.name}`} alt={`{item.name} - ${siteName}`} />
                         )
                     })}
                 </div>

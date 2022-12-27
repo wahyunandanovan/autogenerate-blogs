@@ -1,0 +1,21 @@
+@use "../../mixin.scss" as mixin;
+
+.container {
+  @include mixin.phone {
+    padding: 16px;
+  }
+  @include mixin.tablet {
+    padding: 32px;
+  }
+  @include mixin.laptop {
+    padding: 40px;
+  }
+}
+
+.title {
+  margin: 16px 0px;
+}
+.written {
+  color: rgb(18, 16, 61, 30%);
+  margin-bottom: 8px;
+}
