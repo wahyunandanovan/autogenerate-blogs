@@ -14,6 +14,7 @@ import { blurDataURL, siteName } from "../../utils/data";
 import { firestore } from "../../utils/firebase";
 //STYLE
 import styles from "../../styles/sections/home/recommendation.module.scss";
+import Link from "next/link";
 
 function Recommendation() {
   const q = query(collection(firestore, "articles"), limit(4));
@@ -44,7 +45,7 @@ function Recommendation() {
       <div className={styles.content}>
         <div className={styles.left_column}>
           <Cover
-            href={"/blog/juyuy"}
+            href={`/blog/${firstArr?.id}`}
             image={firstArr?.images[0]}
             category={firstArr?.category?.name.toUpperCase()}
             avatar={"/images/wahyu.jpg"}
@@ -75,7 +76,8 @@ function Recommendation() {
                   </div>
                 </div>
                 <div className={styles.detail}>
-                  <h5>{item.title}</h5>
+                  <Link href={`/blog/${item.id}`} style={{ textDecoration: "none" }}>
+                    <h5>{item.title}</h5></Link>
                   <p>Gafar R ~ {time}</p>
                   <div className={styles.like_wrapper}>
                     {/* <div>

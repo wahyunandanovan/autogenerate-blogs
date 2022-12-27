@@ -12,18 +12,24 @@ import { getColor } from "../../utils";
 //STYLE
 import styles from "../../styles/sections/blog/top-detail.module.scss";
 import { MdCategory } from "react-icons/md";
+import { useRouter } from "next/router";
 
 interface PropsInterface {
   title: string;
   short?: string;
   category?: string | any;
   chipcolor?: string;
+  image?: string | any;
 }
 
-function TopDetail({ title, short, category, chipcolor }: PropsInterface) {
+function TopDetail({ title, short, category, chipcolor, image }: PropsInterface) {
+  const router = useRouter()
+  const _goBack = () => router.back()
+
+
   return (
     <div className={styles.container}>
-      <IoMdArrowBack size={32} />
+      <IoMdArrowBack onClick={_goBack} size={32} style={{ cursor: 'pointer' }} />
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.written}>Written by content writer {siteName}.</p>
       <div className={styles.author_wrapp}>
@@ -43,8 +49,8 @@ function TopDetail({ title, short, category, chipcolor }: PropsInterface) {
           <Chip title={category.toUpperCase()} backgroundColor={getColor(chipcolor)} />
         </div>
         <Image
-          src="https://picsum.photos/id/1018/1000/600/"
-          alt="img"
+          src={image}
+          alt={`${image} - ${siteName}`}
           placeholder="blur"
           blurDataURL={blurDataURL}
           fill

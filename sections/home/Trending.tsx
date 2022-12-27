@@ -42,7 +42,7 @@ function Trending() {
         <div className={styles.left_column}>
           <Cover
             trending
-            href={`/blog/${arr1?.title}`}
+            href={`/blog/${arr1?.id}`}
             image={arr1?.images[0]}
             category={arr1?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
@@ -57,7 +57,7 @@ function Trending() {
         <div className={styles.rigth_column}>
           <Cover
             trending
-            href={`/blog/${arr2?.title}`}
+            href={`/blog/${arr2?.id}`}
             image={arr2?.images[0]}
             category={arr2?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
@@ -70,7 +70,7 @@ function Trending() {
           />
           <Cover
             trending
-            href={`/blog/${arr3?.title}`}
+            href={`/blog/${arr3?.id}`}
             image={arr3?.images[0]}
             category={arr3?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"

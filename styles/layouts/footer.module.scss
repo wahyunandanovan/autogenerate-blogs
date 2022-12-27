@@ -1,4 +1,4 @@
-@use '../../styles/mixin.scss' as mixin;
+@use "../../styles/mixin.scss" as mixin;
 
 .container {
   color: mixin.$color-white;
@@ -20,7 +20,7 @@
 
 .logo {
   font-size: 35px;
-  color: mixin.$color-primary;
+  color: mixin.$color-white;
 }
 
 .flex1 {
