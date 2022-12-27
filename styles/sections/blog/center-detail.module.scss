@@ -1,0 +1,58 @@
+@use "../../mixin.scss" as mixin;
+
+.container {
+  display: flex;
+  gap: 32px;
+  @include mixin.phone {
+    padding: 0px 16px;
+    flex-direction: column;
+  }
+  @include mixin.tablet {
+    padding: 0px 32px;
+    flex-direction: row;
+  }
+  @include mixin.laptop {
+    padding: 0px 40px;
+    flex-direction: row;
+  }
+}
+
+.left {
+  @include mixin.phone {
+    flex: 100%;
+  }
+  @include mixin.tablet {
+    flex: 65%;
+  }
+  @include mixin.laptop {
+    flex: 65%;
+  }
+}
+
+.right {
+  @include mixin.phone {
+    flex: 100%;
+  }
+  @include mixin.tablet {
+    flex: 35%;
+  }
+  @include mixin.laptop {
+    flex: 35%;
+  }
+}
+
+.detail {
+  @include mixin.phone {
+    max-width: 100%;
+  }
+  @include mixin.tablet {
+    max-width: 90%;
+  }
+  @include mixin.laptop {
+    max-width: 90%;
+  }
+  p {
+    line-height: 2;
+    text-align: justify;
+  }
+}

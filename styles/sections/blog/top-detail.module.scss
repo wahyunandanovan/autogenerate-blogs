@@ -1,6 +1,7 @@
-@use '../../mixin.scss' as mixin;
+@use "../../mixin.scss" as mixin;
 
 .container {
+  position: relative;
   @include mixin.phone {
     padding: 16px;
   }
@@ -24,9 +25,11 @@
     height: 542px;
   }
 }
+
 .title {
   margin: 16px 0px;
 }
+
 .written {
   color: rgb(18, 16, 61, 30%);
 }
@@ -54,4 +57,21 @@
       }
     }
   }
+}
+
+.view_wrapp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip {
+  position: absolute;
+  z-index: 99;
+  margin: 16px;
+}
+
+.short_desc {
+  margin: 16px 0px;
+  color: rgb(18, 16, 61, 30%);
 }

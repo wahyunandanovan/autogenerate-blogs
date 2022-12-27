@@ -1,22 +1,22 @@
-import React from 'react';
-import SectionContainer from '../../components/SectionContainer';
-import Cover from '../../components/Cover';
-import Image from 'next/image';
-import Chip from '../../components/Chip';
-import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from 'react-icons/ai';
+import React from "react";
+import SectionContainer from "../../components/SectionContainer";
+import Cover from "../../components/Cover";
+import Image from "next/image";
+import Chip from "../../components/Chip";
+import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 //UTILITY
-import useFetch from '../../hooks/useFetch';
-import moment from 'moment';
-import { collection, limit, query } from 'firebase/firestore';
-import { getColor } from '../../utils';
-import { palette } from '../../utils/palette';
-import { blurDataURL, siteName } from '../../utils/data';
-import { firestore } from '../../utils/firebase';
+import useFetch from "../../hooks/useFetch";
+import moment from "moment";
+import { collection, limit, query } from "firebase/firestore";
+import { getColor } from "../../utils";
+import { palette } from "../../utils/palette";
+import { blurDataURL, siteName } from "../../utils/data";
+import { firestore } from "../../utils/firebase";
 //STYLE
-import styles from '../../styles/sections/home/recommendation.module.scss';
+import styles from "../../styles/sections/home/recommendation.module.scss";
 
 function Recommendation() {
-  const q = query(collection(firestore, 'articles'), limit(4));
+  const q = query(collection(firestore, "articles"), limit(4));
 
   const { data: recomendationData, isLoading } = useFetch(q);
 
@@ -44,9 +44,10 @@ function Recommendation() {
       <div className={styles.content}>
         <div className={styles.left_column}>
           <Cover
+            href={"/blog/juyuy"}
             image={firstArr?.images[0]}
             category={firstArr?.category?.name.toUpperCase()}
-            avatar={'/images/wahyu.jpg'}
+            avatar={"/images/wahyu.jpg"}
             chipcolor={getColor(firstArr?.category?.id)}
             title={firstArr?.title}
             authorname="Wahyu Nanda"
@@ -62,7 +63,13 @@ function Recommendation() {
             return (
               <div key={idx} className={styles.wrapper_map}>
                 <div className={styles.img_wrapp}>
-                  <Image src={img} alt={`${item.title} - ${siteName}`} fill placeholder="blur" blurDataURL={blurDataURL} />
+                  <Image
+                    src={img}
+                    alt={`${item.title} - ${siteName}`}
+                    fill
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                  />
                   <div>
                     <Chip title={item.category.name.toUpperCase()} backgroundColor={getColor(item.category.id)} />
                   </div>
@@ -76,7 +83,7 @@ function Recommendation() {
                       <p>{item.like + 20}</p>
                     </div> */}
                     <div>
-                      <AiOutlineEye size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
+                      <AiOutlineEye size={20} color={palette.grey} style={{ cursor: "pointer" }} />
                       <p>{item.view + 25}</p>
                     </div>
                   </div>

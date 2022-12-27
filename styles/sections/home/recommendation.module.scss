@@ -75,12 +75,12 @@
     position: relative;
     @include mixin.laptop {
       min-width: 25vh;
-      height: 35vh;
+      height: 17vh;
       margin-bottom: 0px !important;
     }
     @include mixin.tablet {
       min-width: 35vh;
-      height: 25vh;
+      height: 17vh;
       margin-bottom: 16px;
     }
     @include mixin.phone {

@@ -1,18 +1,18 @@
-import React from 'react';
-import SectionContainer from '../../components/SectionContainer';
-import Cover from '../../components/Cover';
-import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
+import React from "react";
+import SectionContainer from "../../components/SectionContainer";
+import Cover from "../../components/Cover";
+import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 //UTILITY
-import useFetch from '../../hooks/useFetch';
-import moment from 'moment';
-import { getColor } from '../../utils';
-import { collection, limit, orderBy, query } from 'firebase/firestore';
-import { firestore } from '../../utils/firebase';
+import useFetch from "../../hooks/useFetch";
+import moment from "moment";
+import { getColor } from "../../utils";
+import { collection, limit, orderBy, query } from "firebase/firestore";
+import { firestore } from "../../utils/firebase";
 //STYLE
-import styles from '../../styles/sections/home/trending.module.scss';
+import styles from "../../styles/sections/home/trending.module.scss";
 
 function Trending() {
-  const q = query(collection(firestore, 'articles'), limit(3), orderBy('created_at', 'desc'));
+  const q = query(collection(firestore, "articles"), limit(3), orderBy("created_at", "desc"));
 
   const { data: trendingData, isLoading } = useFetch(q);
 
@@ -42,6 +42,7 @@ function Trending() {
         <div className={styles.left_column}>
           <Cover
             trending
+            href={`/blog/${arr1?.title}`}
             image={arr1?.images[0]}
             category={arr1?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
@@ -56,6 +57,7 @@ function Trending() {
         <div className={styles.rigth_column}>
           <Cover
             trending
+            href={`/blog/${arr2?.title}`}
             image={arr2?.images[0]}
             category={arr2?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
@@ -68,6 +70,7 @@ function Trending() {
           />
           <Cover
             trending
+            href={`/blog/${arr3?.title}`}
             image={arr3?.images[0]}
             category={arr3?.category.name.toUpperCase()}
             avatar="/images/wahyu.jpg"
