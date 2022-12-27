@@ -1,4 +1,4 @@
-@use "../../styles/mixin.scss" as mixin;
+@use '../../styles/mixin.scss' as mixin;
 
 .container {
   color: mixin.$color-white;
@@ -73,6 +73,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 4px;
   margin-bottom: 12px;
 
   img {

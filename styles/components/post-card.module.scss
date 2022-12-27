@@ -1,4 +1,4 @@
-@use "../mixin.scss" as mixin;
+@use '../mixin.scss' as mixin;
 
 .container {
   width: 100%;
@@ -10,6 +10,7 @@
 .image {
   flex: 60%;
   width: 100%;
+  height: 100%;
   position: relative;
 }
 .content {

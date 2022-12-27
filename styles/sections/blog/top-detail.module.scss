@@ -1,4 +1,4 @@
-@use "../../mixin.scss" as mixin;
+@use '../../mixin.scss' as mixin;
 
 .container {
   @include mixin.phone {
@@ -11,11 +11,47 @@
     padding: 40px;
   }
 }
-
+.img {
+  position: relative;
+  width: 100%;
+  @include mixin.phone {
+    height: 193px;
+  }
+  @include mixin.tablet {
+    height: 500px;
+  }
+  @include mixin.laptop {
+    height: 542px;
+  }
+}
 .title {
   margin: 16px 0px;
 }
 .written {
   color: rgb(18, 16, 61, 30%);
-  margin-bottom: 8px;
+}
+
+.author_wrapp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18px 0px;
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    span {
+      margin-left: 8px;
+      color: rgb(18, 16, 61, 30%);
+      @include mixin.phone {
+        font-size: 12px;
+      }
+      @include mixin.tablet {
+        font-size: 14px;
+      }
+      @include mixin.laptop {
+        font-size: 14px;
+      }
+    }
+  }
 }
