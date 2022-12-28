@@ -3,6 +3,7 @@ import SectionContainer from "../../components/SectionContainer";
 import Cover from "../../components/Cover";
 import Image from "next/image";
 import Chip from "../../components/Chip";
+import Link from "next/link";
 import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
 //UTILITY
 import useFetch from "../../hooks/useFetch";
@@ -14,7 +15,6 @@ import { blurDataURL, siteName } from "../../utils/data";
 import { firestore } from "../../utils/firebase";
 //STYLE
 import styles from "../../styles/sections/home/recommendation.module.scss";
-import Link from "next/link";
 
 function Recommendation() {
   const q = query(collection(firestore, "articles"), limit(4));

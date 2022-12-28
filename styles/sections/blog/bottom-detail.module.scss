@@ -1,0 +1,46 @@
+@use "../../mixin.scss" as mixin;
+
+.container {
+  position: relative;
+  @include mixin.phone {
+    padding-left: 16px;
+    margin: 32px 0px;
+  }
+  @include mixin.tablet {
+    padding-left: 32px;
+    margin: 74px 0px;
+  }
+  @include mixin.laptop {
+    padding-left: 40px;
+    margin: 40px 0px;
+  }
+}
+
+.h4 {
+  margin-bottom: 24px;
+  .span {
+    color: mixin.$color-primary;
+  }
+}
+
+.wrapper_map {
+  display: flex;
+  white-space: nowrap;
+  gap: 50px;
+  overflow: auto;
+}
+
+.item {
+  @include mixin.phone {
+    min-width: 280px;
+    height: 200px;
+  }
+  @include mixin.tablet {
+    min-width: 340px;
+    height: 220px;
+  }
+  @include mixin.laptop {
+    min-width: 340px;
+    height: 220px;
+  }
+}
