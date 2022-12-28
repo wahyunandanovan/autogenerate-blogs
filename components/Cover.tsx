@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 //COMPONENTS
-import Chip from "./Chip";
-import Avatar from "./Avatar";
-import Link from "next/link";
-import Image from "next/image";
-import { AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
-import { blurDataURL, siteName } from "../utils/data";
+import Chip from './Chip';
+import Avatar from './Avatar';
+import Link from 'next/link';
+import Image from 'next/image';
+import { AiOutlineHeart, AiOutlineEye } from 'react-icons/ai';
+import { blurDataURL, siteName } from '../utils/data';
 //UTILITY
-import { palette } from "../utils/palette";
+import { palette } from '../utils/palette';
 //STYLES
-import styles from "../styles/components/cover.module.scss";
+import styles from '../styles/components/cover.module.scss';
 
 interface PropsInterface {
   image: string;
@@ -23,36 +23,23 @@ interface PropsInterface {
   time?: string;
   like?: number;
   view?: number;
+  small?: boolean;
   onClickLike?: () => void;
   onClickView?: () => void;
 }
 
-function Cover({
-  image,
-  chipcolor,
-  href,
-  trending,
-  category,
-  avatar,
-  title,
-  authorname,
-  time,
-  like,
-  view,
-  onClickLike,
-  onClickView,
-}: PropsInterface) {
+function Cover({ image, chipcolor, href, trending, category, avatar, title, authorname, time, small, like, view, onClickLike, onClickView }: PropsInterface) {
   return (
     <div
       style={{
-        position: "relative",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "inherit",
+        position: 'relative',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: 'inherit',
       }}
     >
       {image && <Image src={image} alt={`${title} - ${siteName}`} placeholder="blur" blurDataURL={blurDataURL} fill />}
-      <div className={styles.absolute_div}>
+      <div className={small ? styles.absolute_div_small : styles.absolute_div}>
         <div className={styles.top}>
           {trending && (
             <div>
@@ -64,7 +51,7 @@ function Cover({
           </div>
         </div>
         <div className={styles.bottom}>
-          <Link href={href} style={{ textDecoration: "none" }}>
+          <Link href={href} style={{ textDecoration: 'none' }}>
             <h5 className={styles.h5}>{title}</h5>
           </Link>
 
@@ -82,7 +69,7 @@ function Cover({
                 <p>{like}</p>
               </div> */}
               <div>
-                <AiOutlineEye onClick={onClickView} size={20} color={palette.white} style={{ cursor: "pointer" }} />
+                <AiOutlineEye onClick={onClickView} size={20} color={palette.white} style={{ cursor: 'pointer' }} />
                 <p>{view}</p>
               </div>
             </div>

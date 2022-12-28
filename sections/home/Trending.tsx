@@ -1,18 +1,18 @@
-import React from "react";
-import SectionContainer from "../../components/SectionContainer";
-import Cover from "../../components/Cover";
-import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
+import React from 'react';
+import SectionContainer from '../../components/SectionContainer';
+import Cover from '../../components/Cover';
+import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 //UTILITY
-import useFetch from "../../hooks/useFetch";
-import moment from "moment";
-import { getColor } from "../../utils";
-import { collection, limit, orderBy, query } from "firebase/firestore";
-import { firestore } from "../../utils/firebase";
+import useFetch from '../../hooks/useFetch';
+import moment from 'moment';
+import { getColor } from '../../utils';
+import { collection, limit, orderBy, query } from 'firebase/firestore';
+import { firestore } from '../../utils/firebase';
 //STYLE
-import styles from "../../styles/sections/home/trending.module.scss";
+import styles from '../../styles/sections/home/trending.module.scss';
 
 function Trending() {
-  const q = query(collection(firestore, "articles"), limit(3), orderBy("created_at", "desc"));
+  const q = query(collection(firestore, 'articles'), limit(3), orderBy('created_at', 'desc'));
 
   const { data: trendingData, isLoading } = useFetch(q);
 
@@ -51,7 +51,7 @@ function Trending() {
             authorname="Nahyu Nanda"
             time={time(arr1)}
             like={200}
-            view={200}
+            view={arr1?.view}
           />
         </div>
         <div className={styles.rigth_column}>
@@ -66,7 +66,7 @@ function Trending() {
             authorname="Wahyu Nanda"
             time={time(arr2)}
             like={200}
-            view={200}
+            view={arr2?.view}
           />
           <Cover
             trending
@@ -79,7 +79,7 @@ function Trending() {
             authorname="Nahyu Nanda"
             time={time(arr3)}
             like={200}
-            view={200}
+            view={arr3?.view}
           />
         </div>
       </div>

@@ -21,6 +21,16 @@ export interface BannerDataType {
   icon: any;
 }
 
+export interface QueryInterface {
+  title: string;
+  short?: string;
+  category?: string | any;
+  chipcolor?: string;
+  image?: string | Array<string> | any;
+  time?: string | any;
+  view?: number;
+}
+
 export const navbarMenu: NavbarMenuType[] = [
   {
     name: 'Home',

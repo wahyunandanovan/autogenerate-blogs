@@ -1,23 +1,23 @@
-import React from "react";
-import SectionContainer from "../../components/SectionContainer";
-import Cover from "../../components/Cover";
-import Image from "next/image";
-import Chip from "../../components/Chip";
-import Link from "next/link";
-import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from "react-icons/ai";
+import React from 'react';
+import SectionContainer from '../../components/SectionContainer';
+import Cover from '../../components/Cover';
+import Image from 'next/image';
+import Chip from '../../components/Chip';
+import Link from 'next/link';
+import { AiOutlineRight, AiOutlineLeft, AiOutlineHeart, AiOutlineEye } from 'react-icons/ai';
 //UTILITY
-import useFetch from "../../hooks/useFetch";
-import moment from "moment";
-import { collection, limit, query } from "firebase/firestore";
-import { getColor } from "../../utils";
-import { palette } from "../../utils/palette";
-import { blurDataURL, siteName } from "../../utils/data";
-import { firestore } from "../../utils/firebase";
+import useFetch from '../../hooks/useFetch';
+import moment from 'moment';
+import { collection, limit, query } from 'firebase/firestore';
+import { getColor } from '../../utils';
+import { palette } from '../../utils/palette';
+import { blurDataURL, siteName } from '../../utils/data';
+import { firestore } from '../../utils/firebase';
 //STYLE
-import styles from "../../styles/sections/home/recommendation.module.scss";
+import styles from '../../styles/sections/home/recommendation.module.scss';
 
 function Recommendation() {
-  const q = query(collection(firestore, "articles"), limit(4));
+  const q = query(collection(firestore, 'articles'), limit(4));
 
   const { data: recomendationData, isLoading } = useFetch(q);
 
@@ -48,13 +48,13 @@ function Recommendation() {
             href={`/blog/${firstArr?.id}`}
             image={firstArr?.images[0]}
             category={firstArr?.category?.name.toUpperCase()}
-            avatar={"/images/wahyu.jpg"}
+            avatar={'/images/wahyu.jpg'}
             chipcolor={getColor(firstArr?.category?.id)}
             title={firstArr?.title}
             authorname="Wahyu Nanda"
             time={moment(String(firstArr?.created_at)).fromNow()}
             // like={firstArr?.like + 20}
-            view={Number(25)}
+            view={Number(firstArr?.view)}
           />
         </div>
         <div className={styles.rigth_column}>
@@ -64,20 +64,15 @@ function Recommendation() {
             return (
               <div key={idx} className={styles.wrapper_map}>
                 <div className={styles.img_wrapp}>
-                  <Image
-                    src={img}
-                    alt={`${item.title} - ${siteName}`}
-                    fill
-                    placeholder="blur"
-                    blurDataURL={blurDataURL}
-                  />
+                  <Image src={img} alt={`${item.title} - ${siteName}`} fill placeholder="blur" blurDataURL={blurDataURL} />
                   <div>
                     <Chip title={item.category.name.toUpperCase()} backgroundColor={getColor(item.category.id)} />
                   </div>
                 </div>
                 <div className={styles.detail}>
-                  <Link href={`/blog/${item.id}`} style={{ textDecoration: "none" }}>
-                    <h5>{item.title}</h5></Link>
+                  <Link href={`/blog/${item.id}`} style={{ textDecoration: 'none' }}>
+                    <h5>{item.title}</h5>
+                  </Link>
                   <p>Gafar R ~ {time}</p>
                   <div className={styles.like_wrapper}>
                     {/* <div>
@@ -85,8 +80,8 @@ function Recommendation() {
                       <p>{item.like + 20}</p>
                     </div> */}
                     <div>
-                      <AiOutlineEye size={20} color={palette.grey} style={{ cursor: "pointer" }} />
-                      <p>{item.view + 25}</p>
+                      <AiOutlineEye size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
+                      <p>{item.view}</p>
                     </div>
                   </div>
                 </div>

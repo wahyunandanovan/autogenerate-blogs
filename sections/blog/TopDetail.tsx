@@ -1,31 +1,22 @@
-import React from "react";
+import React from 'react';
 //COMPONENTS
-import Image from "next/image";
-import Avatar from "../../components/Avatar";
-import Chip from "../../components/Chip";
-import { IoMdArrowBack } from "react-icons/io";
-import { AiOutlineEye } from "react-icons/ai";
+import Image from 'next/image';
+import Avatar from '../../components/Avatar';
+import Chip from '../../components/Chip';
+import { IoMdArrowBack } from 'react-icons/io';
+import { AiOutlineEye } from 'react-icons/ai';
 //UTILITY
-import { blurDataURL, siteName } from "../../utils/data";
-import { palette } from "../../utils/palette";
-import { getColor } from "../../utils";
+import { blurDataURL, QueryInterface, siteName } from '../../utils/data';
+import { palette } from '../../utils/palette';
+import { getColor } from '../../utils';
 //STYLE
-import styles from "../../styles/sections/blog/top-detail.module.scss";
-import { MdCategory } from "react-icons/md";
-import { useRouter } from "next/router";
+import styles from '../../styles/sections/blog/top-detail.module.scss';
+import { MdCategory } from 'react-icons/md';
+import { useRouter } from 'next/router';
 
-interface PropsInterface {
-  title: string;
-  short?: string;
-  category?: string | any;
-  chipcolor?: string;
-  image?: string | any;
-}
-
-function TopDetail({ title, short, category, chipcolor, image }: PropsInterface) {
-  const router = useRouter()
-  const _goBack = () => router.back()
-
+function TopDetail({ title, short, category, chipcolor, image, time, view }: QueryInterface) {
+  const router = useRouter();
+  const _goBack = () => router.back();
 
   return (
     <div className={styles.container}>
@@ -36,25 +27,19 @@ function TopDetail({ title, short, category, chipcolor, image }: PropsInterface)
         <div className={styles.left}>
           <Avatar src="/images/wahyu.jpg" size={32} />
           <p>
-            Wahyu <span>2 minutes ago</span>
+            Wahyu <span>{time}</span>
           </p>
         </div>
         <div className={styles.view_wrapp}>
-          <AiOutlineEye size={20} color={palette.grey} style={{ cursor: "pointer" }} />
-          <p>100</p>
+          <AiOutlineEye size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
+          <p>{view}</p>
         </div>
       </div>
       <div className={styles.img}>
         <div className={styles.chip}>
           <Chip title={category.toUpperCase()} backgroundColor={getColor(chipcolor)} />
         </div>
-        <Image
-          src={image}
-          alt={`${image} - ${siteName}`}
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          fill
-        />
+        <Image src={image} alt={`${image} - ${siteName}`} placeholder="blur" blurDataURL={blurDataURL} fill />
       </div>
       <p className={styles.short_desc}>{short}</p>
     </div>
