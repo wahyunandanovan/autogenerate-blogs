@@ -33,7 +33,7 @@ function Id() {
 
   return (
     <React.Fragment>
-      <NextSeo title="My-Blog | Home" />
+      <NextSeo title={data[0]?.title} />
       <Detail query={{ data: data, isLoading: isLoading, isError: isError }} />
     </React.Fragment>
   );

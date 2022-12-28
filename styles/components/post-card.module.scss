@@ -21,6 +21,9 @@
     flex-direction: row;
     gap: 8px;
     align-items: center;
+    p {
+      color: rgb(18, 16, 61, 30%);
+    }
   }
 }
 
@@ -30,6 +33,7 @@
 }
 
 .desc {
+  text-align: justify;
   @include mixin.laptop {
     font-size: 14px;
   }

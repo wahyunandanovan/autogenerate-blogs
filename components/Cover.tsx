@@ -24,11 +24,12 @@ interface PropsInterface {
   like?: number;
   view?: number;
   small?: boolean;
+  onClick?: () => void;
   onClickLike?: () => void;
   onClickView?: () => void;
 }
 
-function Cover({ image, chipcolor, href, trending, category, avatar, title, authorname, time, small, like, view, onClickLike, onClickView }: PropsInterface) {
+function Cover({ image, chipcolor, href, trending, category, avatar, title, authorname, time, small, like, view, onClick, onClickLike, onClickView }: PropsInterface) {
   return (
     <div
       style={{
@@ -51,9 +52,17 @@ function Cover({ image, chipcolor, href, trending, category, avatar, title, auth
           </div>
         </div>
         <div className={styles.bottom}>
-          <Link href={href} style={{ textDecoration: 'none' }}>
-            <h5 className={styles.h5}>{title}</h5>
-          </Link>
+          {href && (
+            <Link href={href} style={{ textDecoration: 'none' }}>
+              <h5 className={styles.h5}>{title}</h5>
+            </Link>
+          )}
+
+          {onClick && (
+            <h5 onClick={onClick} className={styles.h5}>
+              {title}
+            </h5>
+          )}
 
           <div className={styles.footer}>
             <div className={styles.author_wrapp}>

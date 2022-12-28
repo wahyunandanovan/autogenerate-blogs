@@ -2,7 +2,6 @@ import React from 'react';
 import PopularPost from '../../components/PopularPost';
 import { useRouter } from 'next/router';
 import styles from '../../styles/sections/blog/center-detail.module.scss';
-import { async } from '@firebase/util';
 
 interface PropsInterface {
   title: string;

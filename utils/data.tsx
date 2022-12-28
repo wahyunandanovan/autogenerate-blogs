@@ -21,13 +21,18 @@ export interface BannerDataType {
   icon: any;
 }
 
+interface Categories {
+  name: string;
+  id: string;
+}
+
 export interface QueryInterface {
+  id: string;
   title: string;
-  short?: string;
-  category?: string | any;
-  chipcolor?: string;
-  image?: string | Array<string> | any;
-  time?: string | any;
+  category: Categories;
+  body: string;
+  images?: string | Array<string> | any;
+  created_at?: string;
   view?: number;
 }
 
@@ -38,15 +43,15 @@ export const navbarMenu: NavbarMenuType[] = [
   },
   {
     name: 'Blog',
-    path: '/',
+    path: '/blog',
   },
   {
     name: 'About Us',
-    path: '/',
+    path: '/about-us',
   },
   {
     name: 'Contact Us',
-    path: '/',
+    path: '/contact-us',
   },
 ];
 

@@ -1,4 +1,4 @@
-@use "../../styles/mixin.scss" as mixin;
+@use '../../styles/mixin.scss' as mixin;
 
 .wrapp {
   width: 100%;
@@ -51,13 +51,6 @@
   @include mixin.laptop {
     display: none;
   }
-}
-
-.link {
-  font-size: 16;
-  color: mixin.$color-black;
-  text-decoration: none;
-  font-weight: 400;
 }
 
 .activeLink {

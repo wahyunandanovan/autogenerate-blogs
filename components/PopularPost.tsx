@@ -29,7 +29,6 @@ function PopularPost({ onClick }: PropsInterface) {
       <div>
         {data?.map((item: any, index: number) => {
           const time = moment(item.created_at).format('MMMM Do YYYY');
-
           return (
             <div key={index} className={styles.row}>
               <h1>0{index + 1}</h1>

@@ -6,13 +6,22 @@ import Chip from '../../components/Chip';
 import { IoMdArrowBack } from 'react-icons/io';
 import { AiOutlineEye } from 'react-icons/ai';
 //UTILITY
-import { blurDataURL, QueryInterface, siteName } from '../../utils/data';
+import { blurDataURL, siteName } from '../../utils/data';
 import { palette } from '../../utils/palette';
 import { getColor } from '../../utils';
 //STYLE
 import styles from '../../styles/sections/blog/top-detail.module.scss';
-import { MdCategory } from 'react-icons/md';
 import { useRouter } from 'next/router';
+
+interface QueryInterface {
+  title: string;
+  short?: string;
+  category?: string | any;
+  chipcolor?: string;
+  image?: string | any;
+  time?: string | any;
+  view?: number;
+}
 
 function TopDetail({ title, short, category, chipcolor, image, time, view }: QueryInterface) {
   const router = useRouter();
