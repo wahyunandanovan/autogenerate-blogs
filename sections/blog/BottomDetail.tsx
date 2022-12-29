@@ -51,7 +51,6 @@ function BottomDetail({ categoryId }: PropsInterface) {
                 title={item?.title}
                 authorname="Wahyu Nanda"
                 time={time}
-                like={200}
                 view={item?.view}
               />
             </div>
