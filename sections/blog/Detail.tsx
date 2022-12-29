@@ -16,16 +16,18 @@ function Detail({ query }: any) {
         <Loading />
       ) : (
         <React.Fragment>
-          <TopDetail
-            image={res?.images[0]}
-            category={res?.category?.name}
-            chipcolor={res?.category?.id}
-            title={res?.title}
-            view={res?.view}
-            short={`${res?.body?.slice(0, 297)}...`}
-          />
-          <CenterDetail title={res?.title} body={res?.body} />
-          <BottomDetail categoryId={res?.category?.id} />
+          <div style={{ maxWidth: 1200, margin: 'auto' }}>
+            <TopDetail
+              image={res?.images[0]}
+              category={res?.category?.name}
+              chipcolor={res?.category?.id}
+              title={res?.title}
+              view={res?.view}
+              short={`${res?.body?.slice(0, 297)}...`}
+            />
+            <CenterDetail title={res?.title} body={res?.body} />
+            <BottomDetail categoryId={res?.category?.id} />
+          </div>
           <Footer />
         </React.Fragment>
       )}

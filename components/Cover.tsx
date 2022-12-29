@@ -12,13 +12,13 @@ import { palette } from '../utils/palette';
 import styles from '../styles/components/cover.module.scss';
 
 interface PropsInterface {
-  image: string;
+  image?: string;
   href?: any;
-  chipcolor: string | any;
+  chipcolor?: string | any;
   category?: string | any;
   trending?: boolean;
   avatar?: string | any;
-  title: string;
+  title?: string;
   authorname?: string;
   time?: string;
   isLoading?: boolean;

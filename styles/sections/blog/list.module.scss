@@ -1,0 +1,30 @@
+@use '../../mixin.scss' as mixin;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between !important;
+  gap: 16px;
+}
+
+.content {
+  @include mixin.laptop {
+    flex: 30% !important;
+    height: 50vh;
+  }
+  @include mixin.tablet {
+    flex: 30% !important;
+    height: 40vh;
+  }
+  @include mixin.phone {
+    flex: 100% !important;
+    height: 30vh;
+  }
+}
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}

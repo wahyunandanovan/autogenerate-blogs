@@ -1,8 +1,13 @@
-@use "../../styles/mixin.scss" as mixin;
+@use '../../styles/mixin.scss' as mixin;
 
 .container {
   color: mixin.$color-white;
   background-color: mixin.$color-secondary;
+}
+
+.wrapp {
+  margin: auto;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -11,10 +16,10 @@
     padding: 40px 16px;
   }
   @include mixin.tablet {
-    padding: 52px;
+    padding: 52px 0px;
   }
   @include mixin.laptop {
-    padding: 80px;
+    padding: 80px 0px;
   }
 }
 

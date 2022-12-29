@@ -27,6 +27,7 @@ function Trending() {
   const arr1 = trendingItems[0];
   const arr2 = trendingItems[1];
   const arr3 = trendingItems[2];
+
   const time = (item: any) => moment(String(item?.created_at)).fromNow();
 
   return (
