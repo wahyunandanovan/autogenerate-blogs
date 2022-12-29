@@ -1,4 +1,4 @@
-@use "../mixin.scss" as mixin;
+@use '../mixin.scss' as mixin;
 
 .top {
   display: flex;
@@ -63,7 +63,7 @@
 .time {
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
-  font-weight: "200";
+  font-weight: '200';
 }
 
 .author {
@@ -81,5 +81,24 @@
     color: mixin.$color-white;
     margin-left: 6px;
     margin-right: 12px;
+  }
+}
+
+.skeleton_loader {
+  position: absolute;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), lightgray;
+  background-repeat: repeat-y;
+  background-size: 50px 500px;
+  background-position: 0 0;
+  animation: shine 1s infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 100% 0, /* move highlight to right */ 0 0;
   }
 }

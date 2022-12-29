@@ -1,0 +1,14 @@
+@use '../mixin.scss' as mixin;
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0px;
+}
+
+.image {
+  width: 70%;
+  height: 70%;
+}

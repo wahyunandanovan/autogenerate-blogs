@@ -33,14 +33,6 @@ function Recommendation() {
             <span>Recomend</span> For You
           </h4>
         </div>
-        <div className={styles.btn_wrapp}>
-          <button>
-            <AiOutlineLeft size={20} />
-          </button>
-          <button>
-            <AiOutlineRight size={20} />
-          </button>
-        </div>
       </div>
       <div className={styles.content}>
         <div className={styles.left_column}>

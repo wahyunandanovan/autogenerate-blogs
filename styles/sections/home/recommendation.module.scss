@@ -1,4 +1,4 @@
-@use "../../mixin.scss" as mixin;
+@use '../../mixin.scss' as mixin;
 
 .row {
   display: flex;
@@ -7,19 +7,6 @@
   margin-bottom: 24px;
   span {
     color: mixin.$color-primary;
-  }
-  .btn_wrapp {
-    display: flex;
-    gap: 16px;
-    height: fit-content;
-  }
-  button {
-    border-width: 0;
-    color: mixin.$color-primary;
-    padding: 4px;
-    border-radius: 5px;
-    background: #fff;
-    box-shadow: 3px 3px 10px 0px #bebebe38, -20px -20px 60px #ffffff;
   }
 }
 
