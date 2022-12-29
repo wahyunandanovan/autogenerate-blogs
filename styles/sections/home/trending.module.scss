@@ -62,3 +62,12 @@
 .col {
   height: 184px !important;
 }
+
+.loading {
+  z-index: 1000;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}

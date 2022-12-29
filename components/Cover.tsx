@@ -21,7 +21,7 @@ interface PropsInterface {
   title: string;
   authorname?: string;
   time?: string;
-  like?: number;
+  // like?: number;
   view?: number;
   small?: boolean;
   onClick?: () => void;
@@ -29,7 +29,7 @@ interface PropsInterface {
   onClickView?: () => void;
 }
 
-function Cover({ image, chipcolor, href, trending, category, avatar, title, authorname, time, small, like, view, onClick, onClickLike, onClickView }: PropsInterface) {
+function Cover({ image, chipcolor, href, trending, category, avatar, title, authorname, time, small, view, onClick, onClickLike, onClickView }: PropsInterface) {
   return (
     <div
       style={{
@@ -79,7 +79,7 @@ function Cover({ image, chipcolor, href, trending, category, avatar, title, auth
               </div> */}
               <div>
                 <AiOutlineEye onClick={onClickView} size={20} color={palette.white} style={{ cursor: 'pointer' }} />
-                <p>{view}</p>
+                <p>{Number(view)}</p>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-@use '../mixin.scss' as mixin;
+@use "../mixin.scss" as mixin;
 
 .top {
   display: flex;
@@ -21,10 +21,18 @@
   position: absolute;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
-  padding: 24px;
   background-color: rgb(0 0 0 / 25%);
   top: 0;
   right: 0;
+  @include mixin.laptop {
+    padding: 16px;
+  }
+  @include mixin.tablet {
+    padding: 16px;
+  }
+  @include mixin.phone {
+    padding: 8px;
+  }
 }
 
 .absolute_div_small {
@@ -55,7 +63,7 @@
 .time {
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
-  font-weight: '200';
+  font-weight: "200";
 }
 
 .author {
