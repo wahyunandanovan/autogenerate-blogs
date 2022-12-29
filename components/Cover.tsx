@@ -44,7 +44,16 @@ function Cover({ image, chipcolor, href, trending, category, isLoading, avatar, 
         <span className={styles.skeleton_loader}></span>
       ) : (
         <React.Fragment>
-          {image && <Image src={image} alt={`${title} - ${siteName}`} placeholder="blur" blurDataURL={blurDataURL} fill />}
+          {image &&
+            <Image src={image}
+              alt={`${title} - ${siteName}`}
+              placeholder="blur"
+              blurDataURL={blurDataURL}
+              fill
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />}
           <div className={small ? styles.absolute_div_small : styles.absolute_div}>
             <div className={styles.top}>
               {trending && (

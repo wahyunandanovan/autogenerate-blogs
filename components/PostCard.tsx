@@ -20,7 +20,14 @@ function PostCard({ img, title, time, description, category, href, chipColor }: 
   return (
     <div className={styles.container}>
       <div className={styles.image}>
-        <Image src={img} alt={`${title} - ${siteName}`} placeholder="blur" blurDataURL={blurDataURL} fill />
+        <Image
+          src={img}
+          alt={`${title} - ${siteName}`}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className={styles.content}>
         <div className={styles.row}>

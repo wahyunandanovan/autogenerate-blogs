@@ -23,7 +23,7 @@ export default function List({ data, isLoading, disabledNext, disabledPrev, getP
         {isLoading &&
           [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item: number, idx: number) => {
             return (
-              <div className={styles.content}>
+              <div key={idx} className={styles.content}>
                 <Cover isLoading={true} />
               </div>
             );

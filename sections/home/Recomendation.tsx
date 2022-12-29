@@ -46,7 +46,7 @@ function Recommendation() {
             authorname="Wahyu Nanda"
             time={moment(String(firstArr?.created_at)).fromNow()}
             // like={firstArr?.like + 20}
-            view={Number(firstArr?.view)}
+            view={firstArr?.view | 0}
           />
         </div>
         <div className={styles.rigth_column}>
@@ -56,7 +56,15 @@ function Recommendation() {
             return (
               <div key={idx} className={styles.wrapper_map}>
                 <div className={styles.img_wrapp}>
-                  <Image src={img} alt={`${item.title} - ${siteName}`} fill placeholder="blur" blurDataURL={blurDataURL} />
+                  <Image src={img}
+                    alt={`${item.title} - ${siteName}`}
+                    fill
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    sizes="(max-width: 768px) 100vw,
+                    (max-width: 1200px) 50vw,
+                    33vw"
+                  />
                   <div>
                     <Chip title={item.category.name.toUpperCase()} backgroundColor={getColor(item.category.id)} />
                   </div>
@@ -73,7 +81,7 @@ function Recommendation() {
                     </div> */}
                     <div>
                       <AiOutlineEye size={20} color={palette.grey} style={{ cursor: 'pointer' }} />
-                      <p>{item.view}</p>
+                      <p>{item.view | 0}</p>
                     </div>
                   </div>
                 </div>

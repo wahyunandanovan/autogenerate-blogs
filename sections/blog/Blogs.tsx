@@ -4,6 +4,15 @@ import { usePagination } from 'use-pagination-firestore';
 import { firestore } from '../../utils/firebase';
 import List from './List';
 
+const triGram = (txt: string) => {
+  const map: any = [];
+  const s1 = (txt || '').toLowerCase();
+  const n = 3;
+  for (let k = 0; k <= s1.length - n; k++)
+    map[s1.substring(k, k + n)] = true;
+  return map;
+};
+
 function Blogs() {
   const [count, setCount] = React.useState<number>(1);
   const searchkey = 'Pertemuan';

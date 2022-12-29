@@ -57,7 +57,7 @@ function Trending() {
               title={arr1?.title}
               authorname="Nahyu Nanda"
               time={time(arr1)}
-              view={arr1?.view}
+              view={arr1?.view | 0}
             />
           </div>
           <div className={styles.rigth_column}>
@@ -72,7 +72,7 @@ function Trending() {
               title={arr2?.title}
               authorname="Wahyu Nanda"
               time={time(arr2)}
-              view={arr2?.view}
+              view={arr2?.view | 0}
             />
             <Cover
               trending
@@ -85,7 +85,7 @@ function Trending() {
               title={arr3?.title}
               authorname="Nahyu Nanda"
               time={time(arr3)}
-              view={arr3?.view}
+              view={arr3?.view | 0}
             />
           </div>
         </div>
