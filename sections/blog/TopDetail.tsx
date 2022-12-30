@@ -15,7 +15,7 @@ import { useRouter } from 'next/router';
 
 interface QueryInterface {
   title: string;
-  short?: string;
+  short?: string | any;
   category?: string | any;
   chipcolor?: string;
   image?: string | any;
@@ -50,7 +50,7 @@ function TopDetail({ title, short, category, chipcolor, image, time, view }: Que
         </div>
         <Image src={image} alt={`${image} - ${siteName}`} placeholder="blur" blurDataURL={blurDataURL} fill />
       </div>
-      <p className={styles.short_desc}>{short}</p>
+      <div className={styles.short_desc} dangerouslySetInnerHTML={{ __html: short }} />
     </div>
   );
 }

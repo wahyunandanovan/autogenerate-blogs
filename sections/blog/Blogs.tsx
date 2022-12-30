@@ -8,8 +8,7 @@ const triGram = (txt: string) => {
   const map: any = [];
   const s1 = (txt || '').toLowerCase();
   const n = 3;
-  for (let k = 0; k <= s1.length - n; k++)
-    map[s1.substring(k, k + n)] = true;
+  for (let k = 0; k <= s1.length - n; k++) map[s1.substring(k, k + n)] = true;
   return map;
 };
 

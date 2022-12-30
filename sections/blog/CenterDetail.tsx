@@ -21,7 +21,7 @@ function CenterDetail({ title, body }: PropsInterface) {
         <h4>{title}</h4>
         <br />
         <div className={styles.detail}>
-          <p>{body}</p>
+          <div dangerouslySetInnerHTML={{ __html: body }} className={styles.body} />
         </div>
       </div>
       <div className={styles.right}>
