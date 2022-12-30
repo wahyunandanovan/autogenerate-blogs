@@ -11,7 +11,7 @@ interface PropsInterface {
   title: string;
   category?: string;
   time?: string;
-  description?: string;
+  description?: string | any;
   href: any;
   chipColor?: string;
 }
@@ -37,7 +37,7 @@ function PostCard({ img, title, time, description, category, href, chipColor }: 
         <Link href={href} style={{ textDecoration: 'none' }}>
           <h5 className={styles.h5}>{title}</h5>
         </Link>
-        <p className={styles.desc}>{description}</p>
+        <div className={styles.desc} dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
   );

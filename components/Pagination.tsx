@@ -41,16 +41,16 @@ function Pagination({ getPrev, getNext, disabledNext, disabledPrev, indicatorPag
 
   return (
     <div style={{ display: 'flex', gap: 16, height: 'fit-content' }}>
-      <button onClick={getPrev} disabled={disabledPrev} style={btnPrevStyle}>
+      <button aria-label='pagination prev button' onClick={getPrev} disabled={disabledPrev} style={btnPrevStyle}>
         <AiOutlineLeft size={20} />
       </button>
       {showIndicatorPage && (
-        <button disabled={true} style={indicatorPageStyle}>
+        <button aria-label='pagination disabled button' disabled={true} style={indicatorPageStyle}>
           <span>PAGE : </span>
           {indicatorPage}
         </button>
       )}
-      <button onClick={getNext} disabled={disabledNext} style={btnNextStyle}>
+      <button aria-label='pagination next button' onClick={getNext} disabled={disabledNext} style={btnNextStyle}>
         <AiOutlineRight size={20} />
       </button>
     </div>

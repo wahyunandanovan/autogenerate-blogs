@@ -10,6 +10,7 @@ interface PropsInterface {
 function Button({ title, color, backgroundColor }: PropsInterface) {
   return (
     <button
+      aria-label={`button ${title}`}
       style={{
         padding: "11px",
         color: color ? color : palette.white,

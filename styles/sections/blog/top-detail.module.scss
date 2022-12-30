@@ -1,4 +1,4 @@
-@use '../../mixin.scss' as mixin;
+@use "../../mixin.scss" as mixin;
 
 .container {
   position: relative;
@@ -75,4 +75,13 @@
   margin: 16px 0px;
   color: rgb(18, 16, 61, 30%);
   line-height: 1;
+  @include mixin.phone {
+    font-size: 12px;
+  }
+  @include mixin.tablet {
+    font-size: 14px;
+  }
+  @include mixin.laptop {
+    font-size: 16px;
+  }
 }

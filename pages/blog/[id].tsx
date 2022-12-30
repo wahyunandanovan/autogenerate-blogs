@@ -33,7 +33,7 @@ function Id() {
 
   return (
     <React.Fragment>
-      <NextSeo title={data[0]?.title} />
+      <NextSeo title={data[0]?.title} description={data[0]?.body?.slice(0, 100)} />
       <Detail query={{ data: data, isLoading: isLoading, isError: isError }} />
     </React.Fragment>
   );
