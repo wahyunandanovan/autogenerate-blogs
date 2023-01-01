@@ -1,42 +1,34 @@
 import React from 'react';
 import Detail from '../../sections/blog/Detail';
-import { useRouter } from 'next/router';
 import { collection, documentId, getDocs, limit, query, where } from 'firebase/firestore';
 import { firestore } from '../../utils/firebase';
 import { NextSeo } from 'next-seo';
 
-function Id() {
-  const [data, setData] = React.useState<any>([]);
-  const [isLoading, setIsLoading] = React.useState<boolean>(true);
-  const [isError, setIsError] = React.useState<boolean>(false);
-
-  const router = useRouter();
-
-  React.useEffect(() => {
-    if (router.isReady) {
-      const { id } = router.query;
-
-      const q = query(collection(firestore, 'articles'), where(documentId(), 'in', [String(id)]), limit(1));
-
-      const fetchPost = async () => {
-        await getDocs(q)
-          .then((querySnapshot) => {
-            const newData = querySnapshot.docs.map((doc: any) => ({ ...doc.data(), id: doc.id }));
-            setData(newData);
-            setIsLoading(false);
-          })
-          .catch((err) => setIsError(true));
-      };
-      fetchPost();
-    }
-  }, [router.isReady]);
+function Id(props: any) {
+  const blog = props?.data
 
   return (
     <React.Fragment>
-      <NextSeo title={data[0]?.title} description={data[0]?.body?.slice(0, 100)} />
-      <Detail query={{ data: data, isLoading: isLoading, isError: isError }} />
+      <NextSeo title={blog[0]?.title} description={blog[0]?.body?.slice(0, 100)} />
+      <Detail query={{ data: blog }} />
     </React.Fragment>
   );
 }
 
 export default Id;
+
+export async function getServerSideProps(context: any) {
+
+  const q = await query(collection(firestore, 'articles'), where(documentId(), 'in', [String(context.params.id
+  )]), limit(1));
+
+  const blog = await getDocs(q)
+    .then((querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc: any) => ({ ...doc.data(), id: doc.id }));
+      return newData
+    })
+
+  return {
+    props: { data: blog },
+  }
+}
