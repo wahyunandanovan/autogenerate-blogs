@@ -7,6 +7,8 @@ import Recommendation from './Recomendation';
 import Post from './Post';
 
 function HomeSection() {
+
+
   return (
     <React.Fragment>
       <Banner />
